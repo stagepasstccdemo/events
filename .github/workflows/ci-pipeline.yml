@@ -59,5 +59,11 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: build-output
-      - name: Deploye MFE @stagepass/app-events
-        run: yarn deploy
+      - name: Unzip Artifacts
+        run: |
+          mkdir -p deploy
+          unzip -q build-output.zip -d deploy
+      - name: Deploy MFE @stagepass/app-events
+        run: |
+          cd deploy
+          yarn deploy
