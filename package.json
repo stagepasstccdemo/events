@@ -92,6 +92,10 @@
     "@semantic-release/git"
   ],
   "release": {
+      "branches": [
+        "main",
+        "staging"
+      ],
       "prepare": [
       "@semantic-release/changelog",
       "@semantic-release/npm",
