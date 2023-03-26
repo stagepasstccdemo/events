@@ -1,5 +1,5 @@
 {
-  "name": "@stagePass/events",
+  "name": "@stagepass/events",
   "scripts": {
     "start": "webpack serve",
     "start:standalone": "webpack serve --env standalone",
@@ -14,7 +14,8 @@
     "prepare": "husky install",
     "commit": "git-cz",
     "coverage": "cross-env BABEL_ENV=test jest --coverage",
-    "build:types": "tsc"
+    "build:types": "tsc",
+    "deploy": "sh deploy.sh"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
@@ -72,7 +73,7 @@
     "single-spa": "^5.9.3",
     "single-spa-react": "^4.3.1"
   },
-  "types": "dist/stagePass-events.d.ts",
+  "types": "dist/stagepass-app-events.d.ts",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
