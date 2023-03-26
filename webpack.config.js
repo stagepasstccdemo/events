@@ -3,8 +3,8 @@ const singleSpaDefaults = require("webpack-config-single-spa-react-ts");
 
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
-    orgName: "stagepass-app",
-    projectName: "events",
+    orgName: "stagepass",
+    projectName: "app-events",
     webpackConfigEnv,
     argv,
   });
