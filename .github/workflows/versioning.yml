@@ -3,7 +3,7 @@ name: Semantic release
 on:
   push:
     branches:
-      - "feature/sta-24-events-mfa-default-project-config-and-tooling"
+      - staging
 jobs:
   publish:
     runs-on: ubuntu-latest
