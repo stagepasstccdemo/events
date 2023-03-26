@@ -92,11 +92,11 @@
     "@semantic-release/git"
   ],
   "release": {
-      "branches": [
-        "main",
-        "staging"
-      ],
-      "prepare": [
+    "branches": [
+      "main",
+      "staging"
+    ],
+    "prepare": [
       "@semantic-release/changelog",
       "@semantic-release/npm",
       {
@@ -108,6 +108,7 @@
         ],
         "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
-    ]  
-  }
+    ]
+  },
+  "version": "1.0.2"
 }
