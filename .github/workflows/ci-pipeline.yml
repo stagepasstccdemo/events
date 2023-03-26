@@ -34,6 +34,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: build-output
+      - name: Install dependencies
+        run: yarn install
+      - name: Generate build
+        run: yarn build
       - name: Semantic Release Versioning
         env: 
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
