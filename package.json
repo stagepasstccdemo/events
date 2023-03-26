@@ -1,5 +1,6 @@
 {
   "name": "@stagepass/events",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "start": "webpack serve",
@@ -109,6 +110,5 @@
         "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
     ]
-  },
-  "version": "1.0.2"
+  }
 }

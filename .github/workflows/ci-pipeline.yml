@@ -1,12 +1,13 @@
-name: Deploy MFE @stagepass/app-events
+name: CI Pipeline
 
 on:
-  push: 
+  push:
     branches:
-      - "staging"
+      - main
+      - staging 
 
-jobs: 
-  build: 
+jobs:
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps: 
@@ -16,13 +17,29 @@ jobs:
           node-version: 18
       - name: INSTALL DEPENDENCIES
         run: yarn install
-      - name: BUILD
+      - name: GENERATE BUILD
         run: yarn build
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: SEMANTIC RELEASE VERSIONING
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: npx semantic-release
+    permissions:
+      contents: write
+
+  deploy:
+    needs: publish
+    runs-on: ubuntu-latest
+    steps:
       - name: SET AWS CREDENTIALS
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
-      - name: DEPLOY APP
+      - name: DEPLOY MFE @stagepass/app-events
         run: yarn deploy
