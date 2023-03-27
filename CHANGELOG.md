@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/stagePass/events/compare/v1.0.2...v1.1.0) (2023-03-27)
+
+
+### Features
+
+* implement pwa behaviour and serviceWorker methods ([2723dfe](https://github.com/stagePass/events/commit/2723dfe24228986dff045e76dff1f44315a63577))
+
 ## [1.0.2](https://github.com/stagePass/events/compare/v1.0.1...v1.0.2) (2023-03-26)
 
 
