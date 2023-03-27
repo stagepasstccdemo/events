@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import singleSpaReact from "single-spa-react";
+import "../serviceWorker";
 
 import * as Sentry from "@sentry/browser";
 import { Integrations } from "@sentry/tracing";
