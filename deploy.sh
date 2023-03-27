@@ -19,3 +19,4 @@ test -s ./import-map.json && cat ./import-map.json | ./jq --arg NEW_URL "$NEW_UR
 # Upload the new import-map.json
 aws s3 cp dist s3://mfe-stage-pass/config/mfe/app-events/$VERSION --recursive
 aws s3 cp new.importmap.json s3://mfe-stage-pass/config/import-map.json
+aws cloudfront create-invalidation --distribution-id E3AG25M6KMU46Y --paths '/config/import-map.json'
