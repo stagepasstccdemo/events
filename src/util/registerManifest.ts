@@ -1,3 +1,4 @@
+// Manifest Template for settingUp PWA in React
 const registerManifest = () => {
   const link = document.createElement("link");
   link.rel = "manifest";
