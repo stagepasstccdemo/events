@@ -5,6 +5,13 @@
 
 * change cdn distribution id value ([d28f55d](https://github.com/stagePass/events/commit/d28f55dc2fd3fc73ebd107816c772ee402c2d94d))
 
+## [1.1.1](https://github.com/stagePass/events/compare/v1.1.0...v1.1.1) (2023-04-08)
+
+
+### Bug Fixes
+
+* change cdn distribution id value ([d28f55d](https://github.com/stagePass/events/commit/d28f55dc2fd3fc73ebd107816c772ee402c2d94d))
+
 ## [1.1.1](https://github.com/stagePass/events/compare/v1.1.0...v1.1.1) (2023-03-28)
 
 
