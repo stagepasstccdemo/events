@@ -3,7 +3,7 @@
   "version": "1.1.1",
   "private": true,
   "scripts": {
-    "start": "webpack serve",
+    "start": "webpack serve --port 8080",
     "start:standalone": "webpack serve --env standalone",
     "build": "concurrently yarn:build:*",
     "build:webpack": "webpack --mode=production",
