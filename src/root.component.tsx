@@ -1,11 +1,12 @@
-// @ts-ignore
+// @ts-nocheck
 import { Navigate } from "@stagepass/osiris-ui";
-
-// @ts-ignore
 import { useStore } from "@stagepass/util-state";
+import { useAuth } from "@stagepass/app-auth";
 
 export default function Root(props) {
   const store = useStore();
+
+  const { signOut } = useAuth();
 
   return (
     <>
@@ -18,6 +19,9 @@ export default function Root(props) {
         Diminuir
       </button>
       <Navigate path="/teste">Teste</Navigate>
+      <button type="button" onClick={() => signOut()}>
+        DESLOGAR
+      </button>
     </>
   );
 }
