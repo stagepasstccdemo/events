@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/stagePass/events/compare/v1.1.1...v1.2.0) (2023-04-20)
+
+
+### Features
+
+* consume app-auth for getting userInfo ([6850389](https://github.com/stagePass/events/commit/6850389c1d5afd2892503b04b9a3f57331ff3878))
+
 ## [1.1.1](https://github.com/stagePass/events/compare/v1.1.0...v1.1.1) (2023-04-08)
 
 
