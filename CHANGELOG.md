@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/stagePass/events/compare/v1.2.0...v1.3.0) (2023-04-24)
+
+
+### Features
+
+* setup react-router-dom | absolute imports | dotEnv plugin ([94bd921](https://github.com/stagePass/events/commit/94bd92108b26d2fa7acd3d6885edfedb0d928ee0))
+
 # [1.2.0](https://github.com/stagePass/events/compare/v1.1.1...v1.2.0) (2023-04-20)
 
 
