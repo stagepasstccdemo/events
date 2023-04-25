@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - staging 
 
 jobs:
   build:
@@ -17,7 +16,9 @@ jobs:
           node-version: 18
           cache: 'yarn'
       - name: Install dependencies
-        run: yarn install
+        run: yarn install  --registry=https://npm.pkg.github.com/
+        env:
+          AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Generate build
         run: yarn build:webpack
       - name: Upload Artifacts 
@@ -36,7 +37,9 @@ jobs:
         with:
           name: build-output
       - name: Install dependencies
-        run: yarn install
+        run: yarn install  --registry=https://npm.pkg.github.com/
+        env: 
+          AUTH_TOKEN: ${{ secrets.GH_TOKEN}}
       - name: Generate build
         run: yarn build:webpack
       - name: Semantic Release Versioning
@@ -56,7 +59,9 @@ jobs:
           node-version: 18
           cache: 'yarn'
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --registry=https://npm.pkg.github.com/
+        env: 
+          AUTH_TOKEN: ${{ secrets.GH_TOKEN}}
       - name: BUILD
         run: yarn build:webpack
       - name: Set AWS Credentials
