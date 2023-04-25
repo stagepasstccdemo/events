@@ -1,37 +1,42 @@
 // @ts-nocheck
-import { Navigate } from "@stagepass/osiris-ui";
-import { useStore } from "@stagepass/util-state";
-import { useAuth } from "@stagepass/app-auth";
-import { navigateToUrl } from "single-spa";
+import {
+  Box,
+  BaseContainer,
+  Header,
+  SearchInput,
+  Filter,
+  FilteredCards,
+} from "@stagepass/osiris-ui";
+import { FiMenu, FiFilter, MdFilterList } from "@assets/icons";
+import LogoImg from "@assets/logo-inline.png";
+import { filterBadgesList } from "../../mocks/filteredBadgesList";
 
 export function Home() {
-  const store = useStore();
-  const { signOut, userSession } = useAuth();
-
   return (
-    <>
-      <h1>@stagepass/events mounted</h1>
-      <h3>COunter: {store.counter}</h3>
-      <button type="button" onClick={store.increment}>
-        Aumentar
-      </button>
-      <button type="button" onClick={store.decrement}>
-        Diminuir
-      </button>
-      <Navigate path="/teste">Teste</Navigate>
-      {userSession ? (
-        <button type="button" onClick={() => signOut()}>
-          DESLOGAR
-        </button>
-      ) : (
-        <button type="button" onClick={() => navigateToUrl("/")}>
-          Logar
-        </button>
-      )}
+    <BaseContainer>
+      <Header
+        leftIcon={<FiMenu size={34} color="F26A0F" />}
+        logoImg={LogoImg}
+        userProfile="FA"
+      />
 
-      {userSession && (
-        <pre>User: {JSON.stringify(userSession.user.email, null, 2)}</pre>
-      )}
-    </>
+      <Box mt="2rem">
+        <SearchInput />
+      </Box>
+
+      <Box mt="1.75rem">
+        <Filter
+          leftIcon={<FiFilter size={20} color="7D6FEC" />}
+          leftText="Quick Filter"
+          rightIcon={<MdFilterList size={20} color="7D6FEC" />}
+          rightText="advanced filters"
+          renderBadgesList={filterBadgesList}
+        />
+
+        <Box mt="32px">
+          <FilteredCards textLabel="Filtered Options" buttonLabel="show all" />
+        </Box>
+      </Box>
+    </BaseContainer>
   );
 }
