@@ -6,16 +6,10 @@ import {
   SearchInput,
   Filter,
   FilteredCards,
-  Button,
-  Image,
-  Text,
-  Flex,
-  SimpleDivider,
-  Card,
 } from "@stagepass/osiris-ui";
 import { FiMenu, FiFilter, MdFilterList } from "@assets/icons";
 import LogoImg from "@assets/logo-inline.png";
-import { filterBadgesList } from "../../mocks/filteredBadgesList";
+import { filteredBadgesList, filteredCardListItems } from "../../mocks";
 
 export function Home() {
   return (
@@ -36,19 +30,14 @@ export function Home() {
           leftText="Quick Filter"
           rightIcon={<MdFilterList size={20} color="7D6FEC" />}
           rightText="advanced filters"
-          renderBadgesList={filterBadgesList}
+          renderBadgesList={filteredBadgesList}
         />
 
         <Box mt="2rem">
-          <FilteredCards textLabel="Filtered Options" buttonLabel="show all" />
-          <Card.Big
-            sourceBannerImg="https://musicmayhemmagazine.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-04-at-10.11.52-PM.png"
-            titleCard="Justin Bieber | #PeachesTour"
-            legendCard="December 20 & 22 | 5PM - 7PM"
-            detailsDescriptionCard="Allianz Parque Stadium, Sao Paulo, Brazil"
-            priceTag="Starting at $200"
-            textButtonLabel="GET TICKETS RIGHT NOW"
-            parentalRating="18+"
+          <FilteredCards
+            textLabel="Filtered Options"
+            buttonLabel="show all"
+            renderList={filteredCardListItems}
           />
         </Box>
       </Box>

@@ -1,4 +1,4 @@
-export const filterBadgesList = [
+export const filteredBadgesList = [
   {
     key: 1,
     text: "All",
