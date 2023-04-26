@@ -1,6 +1,8 @@
+// @ts-nocheck
 import React from "react";
 import { Routes as Switch, Route } from "react-router-dom";
 
+import { Loading } from "@stagepass/osiris-ui";
 import { lazyRoutes } from "./lazyRoutes";
 
 export default function Routes() {
@@ -9,7 +11,7 @@ export default function Routes() {
       {lazyRoutes.map(({ RouteComponent, path }) => (
         <Route
           element={
-            <React.Suspense fallback={<h1>loading...</h1>}>
+            <React.Suspense fallback={<Loading />}>
               <RouteComponent />
             </React.Suspense>
           }

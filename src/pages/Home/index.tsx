@@ -7,10 +7,10 @@ import {
   Filter,
   FilteredCards,
   Divider,
-  Card,
 } from "@stagepass/osiris-ui";
 import { FiMenu, FiFilter, MdFilterList } from "@assets/icons";
 import LogoImg from "@assets/logo-inline.png";
+
 import {
   filteredBadgesList,
   filteredCardListItems,
