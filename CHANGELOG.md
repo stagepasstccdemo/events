@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/stagePass/events/compare/v1.3.0...v1.4.0) (2023-04-26)
+
+
+### Features
+
+* create splash screen ([20d47a3](https://github.com/stagePass/events/commit/20d47a31658c57d8625bc5218b59d4ae19a03853))
+* creates card ([d6b53df](https://github.com/stagePass/events/commit/d6b53dfec0fd0eb8bb2dfcfc7a65431ff9ceeaf8))
+* creates home page by consuming osiris-ui components ([f100b51](https://github.com/stagePass/events/commit/f100b51962dbb26e4387eb4611e34b67f2284442))
+* enhance filter component to accept a render list ([5dfdc46](https://github.com/stagePass/events/commit/5dfdc464bd1f41452a3015664bb1aebddbb0b8ed))
+* isolate BigCard list filter component into a design system component ([ff0aaaf](https://github.com/stagePass/events/commit/ff0aaaf6170227a5be9c18a6144787cea5ff5688))
+* setup use of numbered filtered card itens ([3186839](https://github.com/stagePass/events/commit/3186839b0f8b0c5566861b2850355f8e21b5b012))
+
 # [1.3.0](https://github.com/stagePass/events/compare/v1.2.0...v1.3.0) (2023-04-24)
 
 
