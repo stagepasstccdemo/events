@@ -1,23 +1,10 @@
-// @ts-ignore
-import { Navigate } from "@stagepass/osiris-ui";
+import { BrowserRouter } from "react-router-dom";
+import Routes from "./routes";
 
-// @ts-ignore
-import { useStore } from "@stagepass/util-state";
-
-export default function Root(props) {
-  const store = useStore();
-
+export default function Root() {
   return (
-    <>
-      <section>{props.name} is mounted!</section>
-      <h3>COunter: {store.counter}</h3>
-      <button type="button" onClick={store.increment}>
-        Aumentar
-      </button>
-      <button type="button" onClick={store.decrement}>
-        Diminuir
-      </button>
-      <Navigate path="/teste">Teste</Navigate>
-    </>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   );
 }

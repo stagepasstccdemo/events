@@ -2,9 +2,23 @@
   "extends": "ts-config-single-spa",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "declarationDir": "dist"
+    "declarationDir": "dist",
+    "baseUrl": "./",
+    "paths": {
+      "@stagepass/osiris-ui" : ["./osiris-ui"],
+      "@stagepass/osiris-ui/components/*": ["./node_modules/@stagepass/osiris-ui/components"],
+      "@assets/*": ["src/assets/*"],
+      "@constants/*": ["src/constants/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@pages/*": ["src/pages/*"],
+      "@services/*": ["src/services/*"],
+      "@routes/*": ["src/routes/*"], 
+      "@util/*": ["src/util/*"],
+      "@schemas/*": ["src/schemas/*"],
+      "@icons/*": ["src/assets/icons/*"]
+    }
   },
   "files": ["src/stagepass-app-events.tsx"],
   "include": ["src/**/*"],
-  "exclude": ["src/**/*.test*"]
+  "exclude": ["src/**/*.test*","/node_modules/@stagepass/osiris-ui/node_modules/*"]
 }

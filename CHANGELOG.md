@@ -1,3 +1,24 @@
+# [1.3.0](https://github.com/stagePass/events/compare/v1.2.0...v1.3.0) (2023-04-24)
+
+
+### Features
+
+* setup react-router-dom | absolute imports | dotEnv plugin ([94bd921](https://github.com/stagePass/events/commit/94bd92108b26d2fa7acd3d6885edfedb0d928ee0))
+
+# [1.2.0](https://github.com/stagePass/events/compare/v1.1.1...v1.2.0) (2023-04-20)
+
+
+### Features
+
+* consume app-auth for getting userInfo ([6850389](https://github.com/stagePass/events/commit/6850389c1d5afd2892503b04b9a3f57331ff3878))
+
+## [1.1.1](https://github.com/stagePass/events/compare/v1.1.0...v1.1.1) (2023-04-08)
+
+
+### Bug Fixes
+
+* change cdn distribution id value ([d28f55d](https://github.com/stagePass/events/commit/d28f55dc2fd3fc73ebd107816c772ee402c2d94d))
+
 ## [1.1.1](https://github.com/stagePass/events/compare/v1.1.0...v1.1.1) (2023-04-08)
 
 

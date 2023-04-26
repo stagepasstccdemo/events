@@ -11,6 +11,12 @@ Sentry.init({
   dsn: "https://af23a7def5a74172a8d87d2e0e78c053@o4504899977936896.ingest.sentry.io/4504904055324672",
   integrations: [new Integrations.BrowserTracing()],
   tracesSampleRate: 1.0,
+  beforeSend: (event) => {
+    if (window.location.hostname === "localhost") {
+      return null;
+    }
+    return event;
+  },
 });
 
 const lifecycles = singleSpaReact({
