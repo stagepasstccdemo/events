@@ -1,3 +1,11 @@
+# [1.5.0](https://github.com/stagePass/events/compare/v1.4.0...v1.5.0) (2023-04-28)
+
+
+### Features
+
+* update cards content ([7415c53](https://github.com/stagePass/events/commit/7415c53f363f95e5c2f449c6e10e234ca18dbf0e))
+* update mocks for card items ([cc1a182](https://github.com/stagePass/events/commit/cc1a1824d6793562bade97e538452cfa45c28571))
+
 # [1.4.0](https://github.com/stagePass/events/compare/v1.3.0...v1.4.0) (2023-04-26)
 
 
