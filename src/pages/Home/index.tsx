@@ -61,6 +61,10 @@ export function Home() {
           />
         </Box>
       </Box>
+
+      <Box mt="25px" mb="25px">
+        <Divider rounded="full" />
+      </Box>
       <Footer iconButton={<FiChevronsUp size={64} color="F26A0F" />} />
     </BaseContainer>
   );
