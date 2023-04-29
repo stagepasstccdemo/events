@@ -8,6 +8,7 @@
       "@stagepass/osiris-ui" : ["./osiris-ui"],
       "@stagepass/osiris-ui/components/*": ["./node_modules/@stagepass/osiris-ui/components"],
       "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
       "@constants/*": ["src/constants/*"],
       "@hooks/*": ["src/hooks/*"],
       "@pages/*": ["src/pages/*"],

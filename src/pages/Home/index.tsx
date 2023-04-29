@@ -12,6 +12,7 @@ import {
 import { FiMenu, FiFilter, MdFilterList, FiChevronsUp } from "@assets/icons";
 import LogoImg from "@assets/logo-inline.png";
 
+import { NavBarContent, UserAccountContent } from "@components/Header/";
 import {
   filteredBadgesList,
   filteredCardListItems,
@@ -25,8 +26,11 @@ export function Home() {
         leftIcon={<FiMenu size={34} color="F26A0F" />}
         logoImg={LogoImg}
         userProfile="FA"
-        leftIconModalContent={<h1>testeeeeee</h1>}
-        rightIconModalContent={<h1>teste123</h1>}
+        leftIconModalContent={<NavBarContent />}
+        rightIconModalContent={<UserAccountContent />}
+        leftModalTitle="Menu"
+        rightModalTitle="Profile"
+        bgDecoration
       />
 
       <Box mt="2rem">
