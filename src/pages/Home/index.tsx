@@ -7,8 +7,9 @@ import {
   Filter,
   FilteredCards,
   Divider,
+  Footer,
 } from "@stagepass/osiris-ui";
-import { FiMenu, FiFilter, MdFilterList } from "@assets/icons";
+import { FiMenu, FiFilter, MdFilterList, FiChevronsUp } from "@assets/icons";
 import LogoImg from "@assets/logo-inline.png";
 
 import {
@@ -24,6 +25,8 @@ export function Home() {
         leftIcon={<FiMenu size={34} color="F26A0F" />}
         logoImg={LogoImg}
         userProfile="FA"
+        leftIconModalContent={<h1>testeeeeee</h1>}
+        rightIconModalContent={<h1>teste123</h1>}
       />
 
       <Box mt="2rem">
@@ -58,6 +61,7 @@ export function Home() {
           />
         </Box>
       </Box>
+      <Footer iconButton={<FiChevronsUp size={64} color="F26A0F" />} />
     </BaseContainer>
   );
 }
