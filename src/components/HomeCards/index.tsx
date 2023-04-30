@@ -1,9 +1,15 @@
 // @ts-nocheck
-import { Box, Filter, Divider, FilteredCards } from "@stagepass/osiris-ui";
+import {
+  Box,
+  Filter,
+  Divider,
+  FilteredCards,
+  Skeleton,
+  Flex,
+} from "@stagepass/osiris-ui";
 import { FiFilter, MdFilterList } from "@assets/icons";
 import { useQuery } from "react-query";
 import { useEventsService } from "@hooks/useAPI";
-import { EventSummaryDTO } from "@services/mock/DTO";
 import { filteredBadgesList, numberedCardsListItems } from "../../mocks";
 
 export function HomeCards() {
@@ -14,10 +20,18 @@ export function HomeCards() {
     isLoading,
     isFetching,
     error,
-  } = useQuery("@stagepass:events_summary", getEventsSummary);
+  } = useQuery("@stagepass:events_summary", getEventsSummary, {
+    staleTime: 1000 * 60 * 5, // 5 minutes
+  });
 
   if (isLoading || isFetching) {
-    return <div>Loading...</div>;
+    return (
+      <Flex flexDirection="column" gap="10">
+        <Skeleton height="80px" rounded="xl" />
+        <Skeleton height="400px" rounded="xl" />
+        <Skeleton height="300px" rounded="xl" />
+      </Flex>
+    );
   }
 
   if (error) {
