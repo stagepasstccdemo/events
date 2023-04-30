@@ -12,17 +12,18 @@ import LogoImg from "@assets/logo-inline.png";
 import { NavBarContent, UserAccountContent } from "@components/Header/";
 import { HomeCards } from "@components/HomeCards";
 import { useUser } from "@hooks";
-import { useGithubService } from "@services/models";
+import { useGithubService } from "@hooks/useAPI/models";
 import { useQuery } from "react-query";
+import { useEffect } from "react";
 
 export function Home() {
   const { userInitials, userSession, email } = useUser();
-  // const { getUserInfo } = useGithubService();
+  const { getUserInfo } = useGithubService();
 
-  // const { data, isLoading, isFetching, error } = useQuery(
-  //   "getUserInfo",
-  //   getUserInfo
-  // );
+  const { data, isLoading, isFetching, error } = useQuery(
+    "getUserInfo",
+    getUserInfo
+  );
 
   return (
     <BaseContainer>

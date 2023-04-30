@@ -1,5 +1,5 @@
 export const ENDPOINTS = {
-  baseURL: "https://api.github.com/",
+  baseURL: "stagepass.api/v1",
 
   // Events
   listAllEvents: "events",
