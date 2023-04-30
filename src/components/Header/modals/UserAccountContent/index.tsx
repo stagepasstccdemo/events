@@ -8,9 +8,13 @@ import {
   Box,
 } from "@stagepass/osiris-ui";
 
+import { useUser } from "@hooks/";
+import DefaultAvatarImg from "@assets/default-profile.png";
 import { settingsCardOptions } from "../../../../mocks";
 
 export function UserAccountContent() {
+  const { userFirstName, email, userProfilePic } = useUser();
+
   return (
     <Flex
       flexDirection="column"
@@ -19,17 +23,17 @@ export function UserAccountContent() {
       mt="-6rem"
     >
       <Flex
-        bgColor="os-secondary.100"
         rounded="60px"
         alignItems="center"
         justifyContent="center"
         overflow="hidden"
       >
         <Image
-          src="https://github.com/fillipeags.png"
+          src={userProfilePic || DefaultAvatarImg}
           alt="User Profile"
           objectFit="contain"
           width="180px"
+          border="none"
         />
       </Flex>
       <Text
@@ -42,14 +46,14 @@ export function UserAccountContent() {
       <Text
         as="h2"
         fontSize="3rem"
-        text="Fillipe"
+        text={userFirstName}
         color="os-primary.100"
         fontWeight="bold"
       />
       <Text
         as="span"
         fontSize="sm"
-        text="mail: fillipe@mail.com"
+        text={`mail: ${email}`}
         color="os-ternary.300"
       />
 

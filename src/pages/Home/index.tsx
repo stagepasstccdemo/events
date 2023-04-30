@@ -11,14 +11,19 @@ import LogoImg from "@assets/logo-inline.png";
 
 import { NavBarContent, UserAccountContent } from "@components/Header/";
 import { HomeCards } from "@components/HomeCards";
+import { useUser } from "@hooks";
 
 export function Home() {
+  const { userInitials, userSession, email } = useUser();
+
   return (
     <BaseContainer>
       <Header
         leftIcon={<FiMenu size={34} color="F26A0F" />}
         logoImg={LogoImg}
-        userProfile="FA"
+        {...(userSession && {
+          userProfile: userInitials,
+        })}
         leftIconModalContent={<NavBarContent />}
         rightIconModalContent={<UserAccountContent />}
         leftModalTitle="Menu"
