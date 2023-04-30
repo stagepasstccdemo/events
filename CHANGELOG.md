@@ -1,3 +1,17 @@
+# [1.6.0](https://github.com/stagePass/events/compare/v1.5.0...v1.6.0) (2023-04-30)
+
+
+### Bug Fixes
+
+* wrong icon used on footer ([cf1b045](https://github.com/stagePass/events/commit/cf1b045c5a4ef41a3dfa2639de32b6c959ef706d))
+
+
+### Features
+
+* creates menuCard option renderer list ([8adeef1](https://github.com/stagePass/events/commit/8adeef1a79c2a51ed4e8179294692ad749b796b2))
+* separate header modals into different components ([9b5eab8](https://github.com/stagePass/events/commit/9b5eab8822078c067f45d32421bf3b25a45d1cc8))
+* set modal properties on header ([8340a00](https://github.com/stagePass/events/commit/8340a00e1889c08d5cfcf4b3e863954379e76f0b))
+
 # [1.5.0](https://github.com/stagePass/events/compare/v1.4.0...v1.5.0) (2023-04-28)
 
 
