@@ -1,7 +1,9 @@
 import { Factory } from "miragejs";
+import { EventDTO, EventSummaryDTO } from "../DTO";
+import { EventSummaryFixtures } from "../fixtures/events";
 
 export default {
-  event: Factory.extend({
+  event: Factory.extend<EventDTO>({
     id() {
       return Math.floor(Math.random() * 1000);
     },
@@ -10,21 +12,27 @@ export default {
     },
   }),
 
-  listEventsSummary: Factory.extend({
-    id() {
-      return Math.floor(Math.random() * 1000);
+  listEventsSummary: Factory.extend<EventSummaryDTO>({
+    id(i) {
+      return i + 1;
+    },
+    eventImageURL() {
+      return EventSummaryFixtures[0].eventImageURL;
     },
     eventName() {
-      return "Event name";
+      return EventSummaryFixtures[0].eventName;
     },
     fullDateWithHour() {
-      return "2021-08-01T00:00:00";
+      return EventSummaryFixtures[0].fullDateWithHour;
     },
     location() {
-      return "Location";
+      return EventSummaryFixtures[0].location;
     },
     priceTag() {
-      return "Price tag";
+      return EventSummaryFixtures[0].priceTag;
+    },
+    parentalRating() {
+      return EventSummaryFixtures[0].parentalRating;
     },
   }),
 };

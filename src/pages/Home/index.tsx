@@ -13,7 +13,7 @@ import { NavBarContent, UserAccountContent } from "@components/Header/";
 import { HomeCards } from "@components/HomeCards";
 import { useUser } from "@hooks";
 import { useQuery } from "react-query";
-import { useEventsService } from "@hooks/useAPI/models/events/event.service";
+import { useEventsService } from "@hooks/useAPI/events/event.service";
 
 export function Home() {
   const { userInitials, userSession, email } = useUser();

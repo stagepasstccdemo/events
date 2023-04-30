@@ -1,8 +1,14 @@
-const eventSeeder = (server: any) => {
-  server.createList("event", 10);
-  server.createList("listEventsSummary", 10);
-};
+import { Server } from "miragejs";
 
-export default function seeds(server: any) {
+function eventSeeder(server: Server): void {
+  server.createList("event", 10);
+}
+
+function listEventsSummarySeeder(server: Server): void {
+  server.createList("listEventsSummary", 10);
+}
+
+export default function seeds(server: Server): void {
   eventSeeder(server);
+  listEventsSummarySeeder(server);
 }

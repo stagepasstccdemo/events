@@ -1,4 +1,5 @@
 import { ENDPOINTS } from "@constants/endpoints";
+import { EventSummaryFixtures } from "../fixtures/events";
 
 export default function routes() {
   this.namespace = ENDPOINTS.baseURL;
@@ -9,7 +10,11 @@ export default function routes() {
   });
 
   this.get("/listEventsSummary", (schema: any) => {
-    const events = schema.listEventsSummaries.all();
-    return events;
+    const positions = EventSummaryFixtures;
+    const listEventsSummary = positions.map((pos: any) => {
+      return schema.listEventsSummaries.create(pos);
+    });
+
+    return listEventsSummary;
   });
 }
