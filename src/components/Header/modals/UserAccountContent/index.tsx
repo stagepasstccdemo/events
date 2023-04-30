@@ -4,23 +4,11 @@ import {
   Image,
   Text,
   MenuCardOption,
-  BaseContainer,
+  Footer,
+  Box,
 } from "@stagepass/osiris-ui";
-import { FaTicketAlt, FaChevronRight } from "react-icons/fa";
 
-const cardOptionsList = [
-  {
-    text: "My Tickets Orders",
-    leftIcon: <FaTicketAlt size={38} color="F26A0F" />,
-    rightIcon: <FaChevronRight size={24} color="F26A0F" />,
-    pudim: "1243",
-  },
-  {
-    text: "App Settings",
-    leftIcon: <FaTicketAlt size={38} color="F26A0F" />,
-    rightIcon: <FaChevronRight size={24} color="F26A0F" />,
-  },
-];
+import { settingsCardOptions } from "../../../../mocks";
 
 export function UserAccountContent() {
   return (
@@ -65,11 +53,12 @@ export function UserAccountContent() {
         color="os-ternary.300"
       />
 
-      <BaseContainer>
+      <Box width="100vw" px={6} pt={10}>
         <Flex gap={5} flexDirection="column">
-          <MenuCardOption renderCardListItems={cardOptionsList} />
+          <MenuCardOption renderCardListItems={settingsCardOptions} />
         </Flex>
-      </BaseContainer>
+        <Footer onlyChat />
+      </Box>
     </Flex>
   );
 }
