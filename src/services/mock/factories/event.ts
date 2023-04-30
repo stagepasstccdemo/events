@@ -1,6 +1,14 @@
 import { Factory } from "miragejs";
-import { EventDTO, EventSummaryDTO } from "../DTO";
-import { EventSummaryFixtures } from "../fixtures/events";
+import {
+  EventDTO,
+  EventSummaryDTO,
+  EventTrendingDTO,
+  QuickEventFilterDTO,
+} from "../DTO";
+import {
+  EventSummaryFixtures,
+  EventTrendingFixtures,
+} from "../fixtures/events";
 
 export default {
   event: Factory.extend<EventDTO>({
@@ -33,6 +41,30 @@ export default {
     },
     parentalRating() {
       return EventSummaryFixtures[0].parentalRating;
+    },
+  }),
+
+  listTrendingEvents: Factory.extend<EventTrendingDTO>({
+    id(i) {
+      return i + 1;
+    },
+    trendingPosition() {
+      return EventTrendingFixtures[0].trendingPosition;
+    },
+    eventImageURL() {
+      return EventTrendingFixtures[0].eventImageURL;
+    },
+    eventName() {
+      return EventTrendingFixtures[0].eventName;
+    },
+  }),
+
+  eventsQuickFilterOptions: Factory.extend<QuickEventFilterDTO>({
+    id(i) {
+      return i + 1;
+    },
+    categoryName() {
+      return "All";
     },
   }),
 };

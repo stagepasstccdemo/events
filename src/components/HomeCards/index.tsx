@@ -10,23 +10,47 @@ import {
 import { FiFilter, MdFilterList } from "@assets/icons";
 import { useQuery } from "react-query";
 import { useEventsService } from "@hooks/useAPI";
-import { filteredBadgesList, numberedCardsListItems } from "../../mocks";
 
 export function HomeCards() {
-  const { getEventsSummary } = useEventsService();
+  const { getEventsSummary, getEventsTrending, getQuickFilterOptions } =
+    useEventsService();
 
   const {
     data: eventsSummary,
-    isLoading,
-    isFetching,
-    error,
+    isLoading: eventsSummaryIsLoading,
+    isFetching: eventsSummaryIsFetching,
+    error: eventsSummaryError,
   } = useQuery("@stagepass:events_summary", getEventsSummary, {
-    staleTime: 1000 * 60 * 5, // 5 minutes
+    staleTime: 1000 * 60 * 30, // 30 minutes
   });
 
-  if (isLoading || isFetching) {
+  const {
+    data: eventsTrending,
+    isLoading: eventsTrendingIsLoading,
+    isFetching: eventsTrendingIsFetching,
+    error: eventsTrendingError,
+  } = useQuery("@stagepass:events_trending", getEventsTrending, {
+    staleTime: 1000 * 60 * 30, // 30 minutes
+  });
+
+  const {
+    data: eventsFilterOptions,
+    isLoading: filterOptionsIsLoading,
+    isFetching: filterOptionsIsFetching,
+    error: filterOptionsError,
+  } = useQuery("@stagepass:events_filter_options", getQuickFilterOptions);
+
+  if (
+    eventsSummaryIsLoading ||
+    eventsTrendingIsLoading ||
+    filterOptionsIsLoading ||
+    eventsSummaryIsFetching ||
+    eventsTrendingIsFetching ||
+    filterOptionsIsFetching
+  ) {
     return (
       <Flex flexDirection="column" gap="10">
+        <Skeleton height="80px" rounded="xl" />
         <Skeleton height="80px" rounded="xl" />
         <Skeleton height="400px" rounded="xl" />
         <Skeleton height="300px" rounded="xl" />
@@ -34,8 +58,12 @@ export function HomeCards() {
     );
   }
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
+  if (eventsSummaryError || eventsTrendingError || filterOptionsError) {
+    return (
+      <Box>
+        <h1>Something went wrong.</h1>
+      </Box>
+    );
   }
 
   return (
@@ -46,7 +74,7 @@ export function HomeCards() {
           leftText="Quick Filter"
           rightIcon={<MdFilterList size={20} color="7D6FEC" />}
           rightText="advanced filters"
-          renderBadgesList={filteredBadgesList}
+          renderBadgesList={eventsFilterOptions || []}
         >
           <FilteredCards
             textLabel="Filtered Options"
@@ -64,7 +92,7 @@ export function HomeCards() {
           <FilteredCards
             textLabel="Trending Events"
             cardType="numbered"
-            renderList={numberedCardsListItems}
+            renderList={eventsTrending || []}
           />
         </Box>
       </Box>

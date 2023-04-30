@@ -12,17 +12,11 @@ import LogoImg from "@assets/logo-inline.png";
 import { NavBarContent, UserAccountContent } from "@components/Header/";
 import { HomeCards } from "@components/HomeCards";
 import { useUser } from "@hooks";
-import { useQuery } from "react-query";
 import { useEventsService } from "@hooks/useAPI/events/event.service";
 
 export function Home() {
   const { userInitials, userSession, email } = useUser();
   const { getEventsSummary } = useEventsService();
-
-  const { data, isLoading, isFetching, error } = useQuery(
-    "events_summary",
-    getEventsSummary
-  );
 
   return (
     <BaseContainer>
