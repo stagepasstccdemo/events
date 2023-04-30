@@ -4,7 +4,7 @@ import models from "./models";
 import routes from "./routes";
 import seeds from "./seeds";
 
-const config = (environment: any) => {
+const config = (environment: string) => {
   const config = {
     environment,
     factories,
@@ -16,6 +16,8 @@ const config = (environment: any) => {
   return config;
 };
 
-export function makeServer({ environment = "development" } = {}) {
+export function makeServer({
+  environment = "development",
+}: { environment?: string } = {}) {
   return new Server(config(environment));
 }

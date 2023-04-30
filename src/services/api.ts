@@ -3,5 +3,5 @@ import axios from "axios";
 
 export const api = axios.create({
   baseURL: ENDPOINTS.baseURL,
-  timeout: 5000,
+  timeout: 8000,
 });

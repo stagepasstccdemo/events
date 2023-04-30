@@ -1,6 +1,7 @@
 import { Model } from "miragejs";
 
 export default {
-  events: Model,
+  event: Model,
+  listEventsSummary: Model,
   // ...another modules go here
 };
