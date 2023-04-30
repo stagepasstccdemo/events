@@ -1,5 +1,26 @@
 // @ts-nocheck
-import { Flex, Image, Text } from "@stagepass/osiris-ui";
+import {
+  Flex,
+  Image,
+  Text,
+  MenuCardOption,
+  BaseContainer,
+} from "@stagepass/osiris-ui";
+import { FaTicketAlt, FaChevronRight } from "react-icons/fa";
+
+const cardOptionsList = [
+  {
+    text: "My Tickets Orders",
+    leftIcon: <FaTicketAlt size={38} color="F26A0F" />,
+    rightIcon: <FaChevronRight size={24} color="F26A0F" />,
+    pudim: "1243",
+  },
+  {
+    text: "App Settings",
+    leftIcon: <FaTicketAlt size={38} color="F26A0F" />,
+    rightIcon: <FaChevronRight size={24} color="F26A0F" />,
+  },
+];
 
 export function UserAccountContent() {
   return (
@@ -43,6 +64,12 @@ export function UserAccountContent() {
         text="mail: fillipe@mail.com"
         color="os-ternary.300"
       />
+
+      <BaseContainer>
+        <Flex gap={5} flexDirection="column">
+          <MenuCardOption renderCardListItems={cardOptionsList} />
+        </Flex>
+      </BaseContainer>
     </Flex>
   );
 }
