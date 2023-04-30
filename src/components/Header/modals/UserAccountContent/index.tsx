@@ -6,14 +6,18 @@ import {
   MenuCardOption,
   Footer,
   Box,
+  Button,
 } from "@stagepass/osiris-ui";
 
 import { useUser } from "@hooks/";
 import DefaultAvatarImg from "@assets/default-profile.png";
+import { FaSignOutAlt } from "react-icons/fa";
+import { useAuth } from "@stagepass/app-auth";
 import { settingsCardOptions } from "../../../../mocks";
 
 export function UserAccountContent() {
   const { userFirstName, email, userProfilePic } = useUser();
+  const { signOut } = useAuth();
 
   return (
     <Flex
@@ -57,11 +61,16 @@ export function UserAccountContent() {
         color="os-ternary.300"
       />
 
-      <Box width="100vw" px={6} pt={10}>
+      <Box width="100vw" px={6} pt={10} pb={20} height="100vh">
         <Flex gap={5} flexDirection="column">
           <MenuCardOption renderCardListItems={settingsCardOptions} />
         </Flex>
-        <Footer onlyChat />
+        <Button variant="ghost" mt="2.5rem" onClick={signOut}>
+          <Flex alignItems="center" justifyContent="center" gap="10px">
+            <FaSignOutAlt size={30} color="F26A0F" />
+            <Text text="sign out" color="os-primary.100" fontSize="1.5rem" />
+          </Flex>
+        </Button>
       </Box>
     </Flex>
   );
