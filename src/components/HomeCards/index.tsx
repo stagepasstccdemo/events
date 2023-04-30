@@ -7,11 +7,16 @@ import {
   Skeleton,
   Flex,
 } from "@stagepass/osiris-ui";
+
 import { FiFilter, MdFilterList } from "@assets/icons";
+
 import { useQuery } from "react-query";
 import { useEventsService } from "@hooks/useAPI";
+import { useNavigate } from "react-router-dom";
 
 export function HomeCards() {
+  const navigate = useNavigate();
+
   const { getEventsSummary, getEventsTrending, getQuickFilterOptions } =
     useEventsService();
 
@@ -81,6 +86,9 @@ export function HomeCards() {
             buttonLabel="show all"
             renderList={eventsSummary || []}
             hasSeeMoreOption
+            onSeeMoreClick={(cardItem: number) => {
+              navigate(`/events/${cardItem}`);
+            }}
           />
         </Filter>
 

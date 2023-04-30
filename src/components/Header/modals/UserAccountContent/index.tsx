@@ -4,7 +4,6 @@ import {
   Image,
   Text,
   MenuCardOption,
-  Footer,
   Box,
   Button,
 } from "@stagepass/osiris-ui";
@@ -13,7 +12,31 @@ import { useUser } from "@hooks/";
 import DefaultAvatarImg from "@assets/default-profile.png";
 import { FaSignOutAlt } from "react-icons/fa";
 import { useAuth } from "@stagepass/app-auth";
-import { settingsCardOptions } from "../../../../mocks";
+
+import {
+  FaTicketAlt,
+  FaChevronRight,
+  MdSettings,
+  HiIdentification,
+} from "@assets/icons";
+
+export const settingsCardOptions = [
+  {
+    text: "My Tickets Orders",
+    leftIcon: <FaTicketAlt size={38} color="F26A0F" />,
+    rightIcon: <FaChevronRight size={24} color="F26A0F" />,
+  },
+  {
+    text: "App Settings",
+    leftIcon: <MdSettings size={38} color="F26A0F" />,
+    rightIcon: <FaChevronRight size={24} color="F26A0F" />,
+  },
+  {
+    text: "My Account",
+    leftIcon: <HiIdentification size={38} color="F26A0F" />,
+    rightIcon: <FaChevronRight size={24} color="F26A0F" />,
+  },
+];
 
 export function UserAccountContent() {
   const { userFirstName, email, userProfilePic } = useUser();
