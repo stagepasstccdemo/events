@@ -3,6 +3,7 @@ import { BsChatLeft, BsStarFill } from "react-icons/bs";
 import { MdFilterList, MdSettings } from "react-icons/md";
 import { FaTicketAlt, FaChevronRight } from "react-icons/fa";
 import { HiIdentification } from "react-icons/hi";
+import { IoTicketOutline } from "react-icons/io5";
 
 export {
   FiMenu,
@@ -16,4 +17,5 @@ export {
   HiIdentification,
   FiPlayCircle,
   BsStarFill,
+  IoTicketOutline,
 };
