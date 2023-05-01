@@ -1,3 +1,19 @@
+# [1.7.0](https://github.com/stagePass/events/compare/v1.6.0...v1.7.0) (2023-05-01)
+
+
+### Features
+
+* create base settings on event details item ([a1306ae](https://github.com/stagePass/events/commit/a1306ae0a2e5893f0a331e23d0a4465ebb2508ca))
+* create fixtures structure in mock service ([41636f3](https://github.com/stagePass/events/commit/41636f34a32581e8a039ae4750c5d99799316014))
+* create singout button and user profile info ([c2ec5d2](https://github.com/stagePass/events/commit/c2ec5d24c0154e47edb8d649bef85445f14729f1))
+* creates card skeleton ([2d003f2](https://github.com/stagePass/events/commit/2d003f222ce36c67e43533de586da829ce341359))
+* finish modal userAccount and separate home components ([a2d0b41](https://github.com/stagePass/events/commit/a2d0b4193a2a962fa955f492e25a509b2149f149))
+* make profile info dynamic based on userSession ([9eec70e](https://github.com/stagePass/events/commit/9eec70efe2b722cbe9ddebcaaad18e6244152641))
+* make requests from backend to cards list and also deal with possible errors ([48d4014](https://github.com/stagePass/events/commit/48d40143af44dad4ffaa13673389af101454dfd5))
+* setup miragejs ([9a18d56](https://github.com/stagePass/events/commit/9a18d56144e75519f121f773ecf7b77461e0c1bb))
+* setup router to go to card event details when clicked on home screen ([777742e](https://github.com/stagePass/events/commit/777742ee8344aefbf2ff6e931b836896754b485e))
+* start getting filteredCard data from fake api ([1855428](https://github.com/stagePass/events/commit/1855428aab30a53ad1ca35183332e04de64d9f28))
+
 # [1.6.0](https://github.com/stagePass/events/compare/v1.5.0...v1.6.0) (2023-04-30)
 
 
