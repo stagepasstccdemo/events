@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/stagePass/events/compare/v1.7.0...v1.7.1) (2023-05-01)
+
+
+### Bug Fixes
+
+* setup mock server in production ([324a558](https://github.com/stagePass/events/commit/324a558075fcb519ef4e2eb3090a49467cb0bbd9))
+
 # [1.7.0](https://github.com/stagePass/events/compare/v1.6.0...v1.7.0) (2023-05-01)
 
 
