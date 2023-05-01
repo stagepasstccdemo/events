@@ -1,45 +1,19 @@
 // @ts-nocheck
-import {
-  Box,
-  BaseContainer,
-  Header,
-  SearchInput,
-  Footer,
-} from "@stagepass/osiris-ui";
-import { FiMenu, FiChevronsUp } from "@assets/icons";
-import LogoImg from "@assets/logo-inline.png";
+import { Box, BaseContainer, SearchInput } from "@stagepass/osiris-ui";
 
-import { NavBarContent, UserAccountContent } from "@components/Header/";
+import { DefaultHeader } from "@components/Header/";
 import { HomeCards } from "@components/HomeCards";
-import { useUser } from "@hooks";
-import { useEventsService } from "@hooks/useAPI/events/event.service";
+import { DefaultFooter } from "@components/Footer";
 
 export function Home() {
-  const { userInitials, userSession, email } = useUser();
-  const { getEventsSummary } = useEventsService();
-
   return (
     <BaseContainer>
-      <Header
-        leftIcon={<FiMenu size={34} color="F26A0F" />}
-        logoImg={LogoImg}
-        {...(userSession && {
-          userProfile: userInitials,
-        })}
-        leftIconModalContent={<NavBarContent />}
-        rightIconModalContent={<UserAccountContent />}
-        leftModalTitle="Menu"
-        rightModalTitle="Profile"
-        bgDecoration
-      />
-
+      <DefaultHeader />
       <Box mt="2rem">
         <SearchInput />
       </Box>
-
       <HomeCards />
-
-      <Footer iconButton={<FiChevronsUp size={64} color="F26A0F" />} />
+      <DefaultFooter />
     </BaseContainer>
   );
 }
