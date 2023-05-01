@@ -1,7 +1,8 @@
-import { FiMenu, FiFilter, FiChevronsUp } from "react-icons/fi";
-import { BsChatLeft } from "react-icons/bs";
-import { MdFilterList } from "react-icons/md";
+import { FiMenu, FiFilter, FiChevronsUp, FiPlayCircle } from "react-icons/fi";
+import { BsChatLeft, BsStarFill } from "react-icons/bs";
+import { MdFilterList, MdSettings } from "react-icons/md";
 import { FaTicketAlt, FaChevronRight } from "react-icons/fa";
+import { HiIdentification } from "react-icons/hi";
 
 export {
   FiMenu,
@@ -11,4 +12,8 @@ export {
   BsChatLeft,
   FaTicketAlt,
   FaChevronRight,
+  MdSettings,
+  HiIdentification,
+  FiPlayCircle,
+  BsStarFill,
 };
