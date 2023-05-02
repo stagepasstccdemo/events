@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/stagePass/events/compare/v1.7.1...v1.8.0) (2023-05-02)
+
+
+### Features
+
+* create event details summary card itens and content ([1c16282](https://github.com/stagePass/events/commit/1c1628267e93e9b52d70a20eef924c38318af6de))
+
 ## [1.7.1](https://github.com/stagePass/events/compare/v1.7.0...v1.7.1) (2023-05-01)
 
 
