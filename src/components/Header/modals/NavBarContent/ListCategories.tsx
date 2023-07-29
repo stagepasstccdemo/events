@@ -49,7 +49,7 @@ export function ListCategories() {
       return (
         <React.Fragment key={data.id}>
           <Accordion title={data.title} data={data.items} />
-          {!isLastItem && <Divider m="2" borderColor="os-ternary.300" />}
+          {!isLastItem ? <Divider m="2" borderColor="os-ternary.300" /> : null}
         </React.Fragment>
       );
     }
