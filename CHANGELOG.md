@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/stagePass/events/compare/v1.8.0...v1.9.0) (2023-07-29)
+
+
+### Features
+
+* create list menu event kind categories ([1e84a9c](https://github.com/stagePass/events/commit/1e84a9c6e58d5575e8e61e976a2aa0883cb22a8c))
+
 # [1.8.0](https://github.com/stagePass/events/compare/v1.7.1...v1.8.0) (2023-05-02)
 
 
