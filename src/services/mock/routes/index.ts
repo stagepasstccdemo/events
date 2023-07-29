@@ -1,5 +1,6 @@
 import { ENDPOINTS } from "@constants/endpoints";
 import {
+  EventKindCategoriesFixtures,
   EventSummaryFixtures,
   EventTrendingFixtures,
   QuickEventFilterFixtures,
@@ -37,5 +38,15 @@ export default function routes() {
     });
 
     return listQuickEventFilters;
+  });
+
+  this.get("/listEventKindCategories", (schema: any) => {
+    const categories = EventKindCategoriesFixtures;
+
+    const listEventKindCategories = categories.map((category: any) => {
+      return schema.listEventKindCategories.create(category);
+    });
+
+    return listEventKindCategories;
   });
 }

@@ -1,4 +1,9 @@
-import { EventSummaryDTO, EventTrendingDTO, QuickEventFilterDTO } from "../DTO";
+import {
+  EventSummaryDTO,
+  EventTrendingDTO,
+  QuickEventFilterDTO,
+  EventKindCategoriesDTO,
+} from "../DTO";
 
 export const EventSummaryFixtures: EventSummaryDTO[] = [
   {
@@ -170,5 +175,41 @@ export const QuickEventFilterFixtures: QuickEventFilterDTO[] = [
   {
     id: 6,
     categoryName: "Festivals",
+  },
+];
+
+export const EventKindCategoriesFixtures: EventKindCategoriesDTO[] = [
+  {
+    id: 1,
+    title: "Music",
+    items: [
+      {
+        id: 1,
+        title: "All",
+        pathTo: "/events/music/all",
+      },
+
+      {
+        id: 2,
+        title: "Alternative",
+        pathTo: "/events/music/alternative",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Sports",
+    items: [
+      {
+        id: 1,
+        title: "All",
+        pathTo: "/events/sports/all",
+      },
+      {
+        id: 2,
+        title: "Baseball",
+        pathTo: "/events/sports/baseball",
+      },
+    ],
   },
 ];

@@ -12,8 +12,13 @@ function listEventsTrendingSeeder(server: Server): void {
   server.createList("listEventsTrending", 10);
 }
 
+function listEventKindCategoriesSeeder(server: Server): void {
+  server.createList("listEventKindCategory", 10);
+}
+
 export default function seeds(server: Server): void {
   eventSeeder(server);
   listEventsSummarySeeder(server);
   listEventsTrendingSeeder(server);
+  listEventKindCategoriesSeeder(server);
 }
