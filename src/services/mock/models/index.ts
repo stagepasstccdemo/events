@@ -5,5 +5,6 @@ export default {
   listEventsSummary: Model,
   listEventsTrending: Model,
   eventsQuickFilterOptions: Model,
+  listEventKindCategories: Model,
   // ...another modules go here
 };

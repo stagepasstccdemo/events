@@ -62,10 +62,17 @@ export const useEventsService = () => {
     return formattedData;
   };
 
+  const getEventKindCategories = async () => {
+    const { data } = await api.get(ENDPOINTS.LIST_EVENT_KIND_CATEGORIES);
+
+    return data;
+  };
+
   const services = {
     getEventsSummary,
     getEventsTrending,
     getQuickFilterOptions,
+    getEventKindCategories,
   };
 
   return services;

@@ -1,10 +1,11 @@
 // @ts-nocheck
-import { BaseContainer, Accordion } from "@stagepass/osiris-ui";
+import { BaseContainer } from "@stagepass/osiris-ui";
+import { ListCategories } from "./ListCategories";
 
 export function NavBarContent() {
   return (
     <BaseContainer>
-      <Accordion />
+      <ListCategories />
     </BaseContainer>
   );
 }

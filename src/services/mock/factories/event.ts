@@ -1,11 +1,13 @@
 import { Factory } from "miragejs";
 import {
   EventDTO,
+  EventKindCategoriesDTO,
   EventSummaryDTO,
   EventTrendingDTO,
   QuickEventFilterDTO,
 } from "../DTO";
 import {
+  EventKindCategoriesFixtures,
   EventSummaryFixtures,
   EventTrendingFixtures,
 } from "../fixtures/events";
@@ -65,6 +67,18 @@ export default {
     },
     categoryName() {
       return "All";
+    },
+  }),
+
+  listEventKindCategories: Factory.extend<EventKindCategoriesDTO>({
+    id(i) {
+      return EventKindCategoriesFixtures[i].id;
+    },
+    title(i) {
+      return EventKindCategoriesFixtures[i].title;
+    },
+    items(i) {
+      return EventKindCategoriesFixtures[i].items;
     },
   }),
 };
