@@ -16,9 +16,14 @@ function listEventKindCategoriesSeeder(server: Server): void {
   server.createList("listEventKindCategory", 10);
 }
 
+function listEventDetails(server: Server): void {
+  server.createList("listEventDetail", 10);
+}
+
 export default function seeds(server: Server): void {
   eventSeeder(server);
   listEventsSummarySeeder(server);
   listEventsTrendingSeeder(server);
   listEventKindCategoriesSeeder(server);
+  listEventDetails(server);
 }

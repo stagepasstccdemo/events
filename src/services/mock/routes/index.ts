@@ -2,6 +2,7 @@ import { ENDPOINTS } from "@constants/endpoints";
 
 import {
   eventRoutes,
+  listEventDetails,
   listEventKindCategories,
   listEventsQuickFilterOptions,
   listEventsSummary,
@@ -17,4 +18,5 @@ export default function routes() {
   listEventsSummary(this);
   listEventsQuickFilterOptions(this);
   listEventKindCategories(this);
+  listEventDetails(this);
 }
