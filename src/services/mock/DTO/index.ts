@@ -36,3 +36,50 @@ export type EventKindCategoriesDTO = {
   title: string;
   items: CategoriesDTO[];
 };
+
+type TourSetlist = {
+  id: number;
+  songName: string;
+};
+
+type RecommendedEvents = {
+  id: number;
+  eventImageURL: string;
+  eventMainTitle: string;
+  eventSecondaryTitle: string;
+};
+
+type EventKind = "concert" | "theater" | "sport" | "festival";
+
+export type Tickets = {
+  id: string;
+  eventKind: EventKind;
+  totalAmount: number;
+  metadata: {
+    eventLocation: string;
+    city: string;
+    country: string;
+    date: string;
+  };
+  ticketType: {
+    id: string;
+    type: "VIP" | "Standard" | "Student";
+    price: number;
+    amountAvailable: number;
+  };
+};
+
+export type EventDetailsDTO = {
+  id: number;
+  eventMainTitle: string;
+  eventSubTitle: string;
+  parentalRating: number;
+  amountOfCountriesForEvent: number;
+  peopleInterestedAtThisEvent: number;
+  aboutEvent: string;
+  eventImageURL: string;
+  eventVideoURL: string;
+  tourSetlist?: TourSetlist[];
+  recommendedEvents: RecommendedEvents[];
+  tickets: Tickets[];
+};
