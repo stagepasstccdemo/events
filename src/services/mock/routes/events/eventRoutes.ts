@@ -1,5 +1,5 @@
-export function eventRoutes(schema: any) {
-  schema.get("/event", (schema: any) => {
+export function eventRoutes(schema) {
+  schema.get("/event", (schema) => {
     const events = schema.events.all();
     return events;
   });
