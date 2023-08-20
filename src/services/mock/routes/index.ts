@@ -1,4 +1,6 @@
 import { ENDPOINTS } from "@constants/endpoints";
+import { Response } from "miragejs";
+import { EventDetailsFixtures } from "../fixtures/events";
 
 import {
   eventRoutes,

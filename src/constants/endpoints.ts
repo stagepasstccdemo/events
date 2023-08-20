@@ -6,4 +6,5 @@ export const ENDPOINTS = {
   LIST_EVENTS_TRENDING: "/listEventsTrending",
   LIST_QUICK_FILTER_OPTIONS: "/eventsQuickFilterOptions",
   LIST_EVENT_KIND_CATEGORIES: "/listEventKindCategories",
+  LIST_EVENT_DETAILS_BY_ID: (eventId: number) => `/listEventDetails/${eventId}`,
 };
