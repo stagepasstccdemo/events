@@ -1,11 +1,12 @@
 import { Factory } from "miragejs";
+import { EventKindCategoriesDTO } from "../DTO/events/useCases/EventKindCategoriesDTO";
 import {
   EventDTO,
-  EventKindCategoriesDTO,
   EventSummaryDTO,
-  EventTrendingDTO,
-  QuickEventFilterDTO,
-} from "../DTO";
+} from "../DTO/events/useCases/EventSummaryDTO";
+import { EventTrendingDTO } from "../DTO/events/useCases/EventTrendingDTO";
+import { QuickEventFilterDTO } from "../DTO/events/useCases/QuickEventFilterDTO";
+
 import {
   EventKindCategoriesFixtures,
   EventSummaryFixtures,

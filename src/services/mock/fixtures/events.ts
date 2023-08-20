@@ -1,10 +1,8 @@
-import {
-  EventSummaryDTO,
-  EventTrendingDTO,
-  QuickEventFilterDTO,
-  EventKindCategoriesDTO,
-  EventDetailsDTO,
-} from "../DTO";
+import { EventDetailsDTO } from "../DTO/events/useCases/EventDetailsDTO";
+import { EventKindCategoriesDTO } from "../DTO/events/useCases/EventKindCategoriesDTO";
+import { EventSummaryDTO } from "../DTO/events/useCases/EventSummaryDTO";
+import { EventTrendingDTO } from "../DTO/events/useCases/EventTrendingDTO";
+import { QuickEventFilterDTO } from "../DTO/events/useCases/QuickEventFilterDTO";
 
 export const EventSummaryFixtures: EventSummaryDTO[] = [
   {

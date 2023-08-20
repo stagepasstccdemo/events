@@ -1,0 +1,22 @@
+import { RecommendedEventsDTO } from "./RecommendedEventsDTO";
+import { TicketsDTO } from "./TicketsDTO";
+
+type TourSetlistDTO = {
+  id: number;
+  songName: string;
+};
+
+export type EventDetailsDTO = {
+  id: number;
+  eventMainTitle: string;
+  eventSubTitle: string;
+  parentalRating: number;
+  amountOfCountriesForEvent: number;
+  peopleInterestedAtThisEvent: number;
+  aboutEvent: string;
+  eventImageURL: string;
+  eventVideoURL: string;
+  tourSetlist?: TourSetlistDTO[];
+  recommendedEvents: RecommendedEventsDTO[];
+  tickets: TicketsDTO[];
+};

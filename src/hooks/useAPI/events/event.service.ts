@@ -1,6 +1,8 @@
 import { ENDPOINTS } from "@constants/endpoints";
 import { api } from "@services/api";
-import { EventSummaryDTO, EventTrendingDTO } from "@services/mock/DTO";
+
+import { EventSummaryDTO } from "@services/mock/DTO/events/useCases/EventSummaryDTO";
+import { EventTrendingDTO } from "@services/mock/DTO/events/useCases/EventTrendingDTO";
 
 export const useEventsService = () => {
   const getEventsSummary = async () => {
