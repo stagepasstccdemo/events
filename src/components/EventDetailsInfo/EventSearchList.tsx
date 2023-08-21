@@ -1,4 +1,5 @@
 import { IoTicketOutline } from "@assets/icons";
+import { TicketsDTO } from "@services/mock/DTO";
 import { Box, Button, Divider, Flex, Text } from "@stagepass/osiris-ui";
 
 export function EventSearchList({ data, ...props }: any) {
@@ -21,11 +22,11 @@ export function EventSearchList({ data, ...props }: any) {
       </Flex>
 
       {data &&
-        data?.map(({ id, metadata }: any) => (
-          <div key={id}>
+        data?.map((ticketInfo: TicketsDTO) => (
+          <div key={ticketInfo.id}>
             <Flex mt="2rem" alignItems="center" justifyContent="space-between">
               <Text
-                text={`${metadata.eventLocation} - ${metadata.city}, ${metadata.country}`}
+                text={`${ticketInfo.location} - ${ticketInfo.city}, ${ticketInfo.country}`}
                 color="gray.100"
                 fontSize="1rem"
                 maxWidth="180px"
@@ -33,12 +34,12 @@ export function EventSearchList({ data, ...props }: any) {
               />
               <Flex flexDirection="column">
                 <Text
-                  text={metadata.date}
+                  text={ticketInfo.date}
                   color="os-primary.300"
                   fontWeight="bold"
                 />
                 <Text
-                  text={`${metadata.day} - ${metadata.time}`}
+                  text={`${ticketInfo.day} - ${ticketInfo.time}`}
                   color="os-primary.300"
                 />
               </Flex>
@@ -58,7 +59,7 @@ export function EventSearchList({ data, ...props }: any) {
               SEE TICKETS FOR THIS CONCERT
             </Button>
 
-            {id !== data[data.length - 1].id && (
+            {ticketInfo.id !== data[data.length - 1].id && (
               <Box mt="2rem" mb="2rem">
                 <Divider borderColor="os-primary.100" />
               </Box>
