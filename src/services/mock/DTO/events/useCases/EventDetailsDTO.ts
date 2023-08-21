@@ -12,7 +12,6 @@ export type EventDetailsDTO = {
   locationsAmount: number;
   eventSubTitle: string;
   parentalRating: number;
-  amountOfCountriesForEvent: number;
   peopleInterestedAtThisEvent: number;
   aboutEvent: string;
   eventImageURL: string;

@@ -18,9 +18,6 @@ export const listEventDetailsFactory = Factory.extend<EventDetailsDTO>({
   parentalRating() {
     return EventDetailsFixtures[0].parentalRating;
   },
-  amountOfCountriesForEvent() {
-    return EventDetailsFixtures[0].amountOfCountriesForEvent;
-  },
   peopleInterestedAtThisEvent() {
     return EventDetailsFixtures[0].peopleInterestedAtThisEvent;
   },
