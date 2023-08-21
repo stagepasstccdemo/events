@@ -9,6 +9,8 @@ export type TicketsDTO = {
     city: string;
     country: string;
     date: string;
+    time: string;
+    day: string;
   };
   ticketType: {
     id: string;

@@ -71,7 +71,7 @@ export const useEventsService = () => {
 
   const getEventDetails = async (eventId: string) => {
     const { data } = await api.get(ENDPOINTS.LIST_EVENT_DETAILS_BY_ID(eventId));
-    return data;
+    return data?.listEventDetails;
   };
 
   const services = {

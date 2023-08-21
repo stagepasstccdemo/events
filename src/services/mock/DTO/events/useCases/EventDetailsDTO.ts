@@ -9,6 +9,7 @@ type TourSetlistDTO = {
 export type EventDetailsDTO = {
   id: number;
   eventMainTitle: string;
+  locationsAmount: number;
   eventSubTitle: string;
   parentalRating: number;
   amountOfCountriesForEvent: number;

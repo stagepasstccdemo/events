@@ -3,6 +3,7 @@ import { EventDetailsDTO } from "@services/mock/DTO";
 export const EventDetailsFixtures: EventDetailsDTO[] = [
   {
     id: 1,
+    locationsAmount: 12,
     eventMainTitle: "Justin Bieber",
     eventSubTitle: "#PeachesTour",
     parentalRating: 18,
@@ -12,8 +13,7 @@ export const EventDetailsFixtures: EventDetailsDTO[] = [
       " Immerse yourself in an electrifying and unforgettable musical experience as global pop sensation Justin Bieber takes the stage in a dazzling concert event. Step into a world of lights, music, and unparalleled energy as the arena comes alive with anticipation. From the moment the lights dim and the crowd's excitement reaches a crescendo, Justin Bieber's magnetic presence commands the stage. The air is charged with a palpable energy as the first notes of his chart-topping hits reverberate through the venue, instantly transporting the audience into a realm of pure musical ecstasy.",
     eventImageURL:
       "https://www.vagalume.com.br/justin-bieber/discografia/justice-11.jpg",
-    eventVideoURL:
-      "https://www.youtube.com/watch?v=Fp8msa5uYsc&ab_channel=JustinBieberVEVO",
+    eventVideoURL: "https://www.youtube.com/embed/Fp8msa5uYsc",
     tourSetlist: [
       {
         id: 1,
@@ -59,21 +59,17 @@ export const EventDetailsFixtures: EventDetailsDTO[] = [
     recommendedEvents: [
       {
         id: 1,
-        eventImageURL: "https://example.com/event1_image.jpg",
-        eventMainTitle: "Summer Vibes Music Festival",
-        eventSecondaryTitle: "A Celebration of Music and Culture",
+        eventImageURL:
+          "https://www.udiscovermusic.com/wp-content/uploads/2019/08/Taylor-Swift-Lover-album-cover-820.jpg",
+        eventMainTitle: "Taylor Swift",
+        eventSecondaryTitle: "The Eras Tour",
       },
       {
         id: 2,
-        eventImageURL: "https://example.com/event2_image.jpg",
-        eventMainTitle: "Art & Beats Exhibition",
-        eventSecondaryTitle: "Where Art and Music Collide",
-      },
-      {
-        id: 3,
-        eventImageURL: "https://example.com/event3_image.jpg",
-        eventMainTitle: "Dance Fever Showcase",
-        eventSecondaryTitle: "Groove to the Rhythm of the Night",
+        eventImageURL:
+          "https://lmcexperience.com/wp-content/uploads/2023/04/NFHope.jpg",
+        eventMainTitle: "NF",
+        eventSecondaryTitle: "The Search",
       },
     ],
     tickets: [
@@ -86,6 +82,8 @@ export const EventDetailsFixtures: EventDetailsDTO[] = [
           city: "Sao Paulo",
           country: "Brazil",
           date: "December 20, 2021",
+          day: "Monday",
+          time: "8:00 PM",
         },
         ticketType: {
           id: "123131",

@@ -6,6 +6,9 @@ export const listEventDetailsFactory = Factory.extend<EventDetailsDTO>({
   id(i) {
     return i + 1;
   },
+  locationsAmount() {
+    return EventDetailsFixtures[0].locationsAmount;
+  },
   eventMainTitle() {
     return EventDetailsFixtures[0].eventMainTitle;
   },
