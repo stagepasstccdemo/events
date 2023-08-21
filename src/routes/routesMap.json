@@ -1,7 +1,8 @@
 [
-    {
+  {
     "element": "EventDetails",
-    "path": "/events/:eventId"
+    "path": "/event"
+    
   },
   {
     "element": "Home",

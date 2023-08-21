@@ -43,7 +43,9 @@ export function HomeCards() {
     isLoading: filterOptionsIsLoading,
     isFetching: filterOptionsIsFetching,
     error: filterOptionsError,
-  } = useQuery("@stagepass:events_filter_options", getQuickFilterOptions);
+  } = useQuery("@stagepass:events_filter_options", getQuickFilterOptions, {
+    staleTime: 1000 * 60 * 30, // 30 minutes
+  });
 
   if (
     eventsSummaryIsLoading ||
@@ -87,7 +89,7 @@ export function HomeCards() {
             renderList={eventsSummary || []}
             hasSeeMoreOption
             onSeeMoreClick={(cardItem: number) => {
-              navigate(`/events/${cardItem}`);
+              navigate(`/event?eventId=${cardItem}`, { replace: true });
             }}
           />
         </Filter>
