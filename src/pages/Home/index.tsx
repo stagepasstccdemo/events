@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { Box, BaseContainer, SearchInput } from "@stagepass/osiris-ui";
 
 import { DefaultHeader } from "@components/Header/";

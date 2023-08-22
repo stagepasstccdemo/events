@@ -1,9 +1,8 @@
-// @ts-nocheck
 import { Header } from "@stagepass/osiris-ui";
 
 import { FiMenu } from "@assets/icons";
 import LogoImg from "@assets/logo-inline.png";
-import { useUser } from "@hooks";
+import { useUser } from "@hooks/useUser";
 import { NavBarContent } from "./modals/NavBarContent";
 import { UserAccountContent } from "./modals/UserAccountContent";
 
@@ -24,7 +23,6 @@ export function DefaultHeader() {
       rightIconModalContent={<UserAccountContent />}
       leftModalTitle="Menu"
       rightModalTitle="Profile"
-      bgDecoration
     />
   );
 }

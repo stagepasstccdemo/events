@@ -1,12 +1,4 @@
-// @ts-nocheck
-import {
-  BaseContainer,
-  Flex,
-  Skeleton,
-  Box,
-  Accordion,
-  Divider,
-} from "@stagepass/osiris-ui";
+import { Flex, Skeleton, Box, Accordion, Divider } from "@stagepass/osiris-ui";
 
 import { useEventsService } from "@hooks/useAPI";
 import { useQuery } from "react-query";
@@ -16,16 +8,15 @@ import React from "react";
 export function ListCategories() {
   const { getEventKindCategories } = useEventsService();
 
-  const {
-    data: eventKindCategories,
-    isLoading: eventKindCategoriesIsLoading,
-    isFetching: eventKindCategoriesIsFetching,
-    error: eventKindCategoriesError,
-  } = useQuery("@stagepass:event_kind_categories", getEventKindCategories, {
-    staleTime: 1000 * 60 * 30, // 30 minutes
-  });
+  const { data, isLoading, isFetching, error } = useQuery(
+    "@stagepass:event_kind_categories",
+    getEventKindCategories,
+    {
+      staleTime: 1000 * 60 * 60 * 24 * 30, // 1 month
+    }
+  );
 
-  if (eventKindCategoriesIsLoading || eventKindCategoriesIsFetching) {
+  if (isLoading || isFetching) {
     return (
       <Flex bgColor="primary" flexDirection="column" gap="10">
         <Skeleton height="80px" rounded="xl" />
@@ -34,7 +25,7 @@ export function ListCategories() {
     );
   }
 
-  if (eventKindCategoriesError) {
+  if (error) {
     return (
       <Box>
         <h1>Something went wrong.</h1>
@@ -42,16 +33,14 @@ export function ListCategories() {
     );
   }
 
-  return eventKindCategories.map<EventKindCategoriesDTO[]>(
-    (data: EventKindCategoriesDTO, index: any) => {
-      const isLastItem = index === eventKindCategories.length - 1;
+  return data.map((item: EventKindCategoriesDTO, index: number) => {
+    const isLastItem = index === data.length - 1;
 
-      return (
-        <React.Fragment key={data.id}>
-          <Accordion title={data.title} data={data.items} />
-          {!isLastItem ? <Divider m="2" borderColor="os-ternary.300" /> : null}
-        </React.Fragment>
-      );
-    }
-  );
+    return (
+      <React.Fragment key={item.id}>
+        <Accordion title={item.title} data={item.items} />
+        {!isLastItem ? <Divider m="2" borderColor="os-ternary.300" /> : null}
+      </React.Fragment>
+    );
+  });
 }
