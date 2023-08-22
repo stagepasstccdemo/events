@@ -20,3 +20,22 @@ export type EventDetailsDTO = {
   recommendedEvents: RecommendedEventsDTO[];
   tickets: TicketsDTO[];
 };
+
+export type EventDetailsResponse = {
+  listEventDetails: EventDetailsDTO;
+  summaryHeader: Pick<
+    EventDetailsDTO,
+    | "eventImageURL"
+    | "eventMainTitle"
+    | "eventSubTitle"
+    | "parentalRating"
+    | "locationsAmount"
+    | "peopleInterestedAtThisEvent"
+    | "aboutEvent"
+  >;
+  eventExtraContent: Pick<
+    EventDetailsDTO,
+    "tourSetlist" | "eventVideoURL" | "recommendedEvents"
+  >;
+  eventTicketsList: TicketsDTO[];
+};

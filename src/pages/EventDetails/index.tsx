@@ -13,7 +13,6 @@ import { EventSearchList } from "@components/EventDetailsInfo/EventSearchList";
 import { EventExtraContent } from "@components/EventDetailsInfo/EventExtraContent";
 
 import { useQuery } from "react-query";
-import { useLocation } from "react-router-dom";
 import { useEventsService } from "@hooks/useAPI";
 import { useSearchParams } from "@hooks/useSearchParams";
 

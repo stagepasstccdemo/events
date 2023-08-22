@@ -1,12 +1,11 @@
-import { ENDPOINTS } from "@constants/endpoints";
-import { api } from "@services/api";
-
 import {
-  EventDetailsDTO,
+  EventDetailsResponse,
   EventSummaryDTO,
   EventTrendingDTO,
-  TicketsDTO,
 } from "@services/mock/DTO";
+
+import { api } from "@services/api";
+import { ENDPOINTS } from "@constants/endpoints";
 
 export const useEventsService = () => {
   const getEventsSummary = async () => {
@@ -98,16 +97,7 @@ export const useEventsService = () => {
         recommendedEvents,
       } = data.listEventDetails;
 
-      const summaryHeader: Pick<
-        EventDetailsDTO,
-        | "eventImageURL"
-        | "eventMainTitle"
-        | "eventSubTitle"
-        | "parentalRating"
-        | "locationsAmount"
-        | "peopleInterestedAtThisEvent"
-        | "aboutEvent"
-      > = {
+      const summaryHeader: EventDetailsResponse["summaryHeader"] = {
         eventImageURL,
         eventMainTitle,
         eventSubTitle,
@@ -117,10 +107,7 @@ export const useEventsService = () => {
         aboutEvent,
       };
 
-      const eventExtraContent: Pick<
-        EventDetailsDTO,
-        "tourSetlist" | "eventVideoURL" | "recommendedEvents"
-      > = {
+      const eventExtraContent: EventDetailsResponse["eventExtraContent"] = {
         tourSetlist,
         eventVideoURL,
         recommendedEvents,
@@ -128,7 +115,7 @@ export const useEventsService = () => {
 
       return {
         summaryHeader,
-        eventTicketsList: <TicketsDTO>tickets,
+        eventTicketsList: <EventDetailsResponse["eventTicketsList"]>tickets,
         eventExtraContent,
       };
     } catch (error) {

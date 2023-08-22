@@ -1,7 +1,12 @@
-import { Box, Divider, Flex, Image, Text, Button } from "@stagepass/osiris-ui";
 import { FiPlayCircle } from "@assets/icons";
+import { EventDetailsResponse } from "@services/mock/DTO";
+import { Box, Divider, Flex, Image, Text, Button } from "@stagepass/osiris-ui";
 
-export function EventDetailsSummaryHeader({ data, ...props }: any) {
+type Props = {
+  data: EventDetailsResponse["summaryHeader"];
+};
+
+export function EventDetailsSummaryHeader({ data }: Props) {
   return (
     <>
       <Flex alignItems="center" justifyContent="space-between">
@@ -26,14 +31,14 @@ export function EventDetailsSummaryHeader({ data, ...props }: any) {
             rounded="full"
             maxWidth="150px"
             maxHeight="150px"
-            src={data?.eventImageURL}
+            src={data.eventImageURL}
           />
         </Box>
 
         <Flex flexDirection="column" width="45%">
           <Box>
             <Text
-              text={data?.eventMainTitle}
+              text={data.eventMainTitle}
               color="os-primary.100"
               fontSize="1.5rem"
               fontWeight="bold"
@@ -41,7 +46,7 @@ export function EventDetailsSummaryHeader({ data, ...props }: any) {
             <Divider rounded="full" width="100%" borderColor="os-ternary.300" />
           </Box>
           <Text
-            text={data?.eventSubTitle}
+            text={data.eventSubTitle}
             color="os-secondary.200"
             fontWeight="bold"
           />
@@ -51,19 +56,19 @@ export function EventDetailsSummaryHeader({ data, ...props }: any) {
             justifyContent="space-between"
           >
             <Text
-              text={`Age: ${data?.parentalRating} years & above`}
+              text={`Age: ${data.parentalRating} years & above`}
               color="os-secondary.200"
               fontSize="sm"
             />
             <Text
-              text={`Where: ${data?.locationsAmount} countries`}
+              text={`Where: ${data.locationsAmount} countries`}
               fontSize="sm"
               color="os-secondary.200"
             />
           </Flex>
           <Flex alignItems="center" flexWrap="wrap">
             <Text
-              text={`${data?.peopleInterestedAtThisEvent} people are instered in this`}
+              text={`${data.peopleInterestedAtThisEvent} people are instered in this`}
               color="os-secondary.200"
               fontSize="sm"
             />
@@ -77,7 +82,7 @@ export function EventDetailsSummaryHeader({ data, ...props }: any) {
           fontSize="2rem"
           fontWeight="bold"
         />
-        <Text color="os-secondary.200" text={data?.aboutEvent} />
+        <Text color="os-secondary.200" text={data.aboutEvent} />
 
         <Button
           mt="2rem"
