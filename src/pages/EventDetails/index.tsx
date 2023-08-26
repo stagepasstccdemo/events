@@ -1,13 +1,14 @@
 import { Box, Heading, Loading } from "@stagepass/osiris-ui";
 
-import { EventDetailsSummaryHeader } from "@components/EventDetailsInfo";
-import { EventSearchList } from "@components/EventDetailsInfo/EventSearchList";
-import { EventExtraContent } from "@components/EventDetailsInfo/EventExtraContent";
-
 import { useQuery } from "react-query";
 import { useEventsService } from "@hooks/useAPI";
-import { useSearchParams } from "@hooks/useSearchParams";
 import { PageWrapper } from "@components/PageWrapper";
+import { useSearchParams } from "@hooks/useSearchParams";
+import {
+  EventDetailsSummaryHeader,
+  EventExtraContent,
+  EventSearchList,
+} from "@components/EventDetailsInfo";
 
 export function EventDetails() {
   const eventId = useSearchParams("eventId");
@@ -30,7 +31,7 @@ export function EventDetails() {
       {error ? (
         <Heading text="Something went wrong" />
       ) : (
-        <Box>
+        <Box mt="5">
           <EventDetailsSummaryHeader data={data.summaryHeader} />
           <EventSearchList data={data.eventTicketsList} />
           <EventExtraContent data={data.eventExtraContent} />

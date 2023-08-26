@@ -14,16 +14,16 @@ export function EventExtraContent({ data }: Props) {
           color="os-ternary.300"
           fontSize="1.5rem"
         />
-        <Box mt="2rem" mb="2rem" height="1000px" position="relative">
+        <Box mt="2rem" mb="2rem" position="relative">
           <Box
-            rounded="xl"
+            rounded="md"
             border="4px solid"
             borderColor="os-ternary.300"
             filter="brightness(0.7)"
           >
             <iframe
               width="100%"
-              height="1000px"
+              height="500px"
               title={data.eventVideoURL}
               src={data.eventVideoURL}
               allowFullScreen
@@ -82,8 +82,8 @@ export function EventExtraContent({ data }: Props) {
               gap="10px"
               border="4px solid"
               borderColor="os-ternary.300"
-              rounded="xl"
-              height="160px"
+              rounded="2xl"
+              height="140px"
               overflow="hidden"
             >
               <Image
@@ -97,7 +97,7 @@ export function EventExtraContent({ data }: Props) {
               <Box>
                 <Text
                   text={event.eventMainTitle}
-                  fontSize="2rem"
+                  fontSize="1.2rem"
                   color="os-ternary.300"
                   fontWeight="bold"
                 />
@@ -107,6 +107,7 @@ export function EventExtraContent({ data }: Props) {
                   color="gray.700"
                 />
                 <Button
+                  mt="1rem"
                   bgColor="os-ternary.300"
                   color="gray.100"
                   rounded="xl"

@@ -1,7 +1,7 @@
 import { IoTicketOutline } from "@assets/icons";
+import { DateFormatter } from "@util/DateFormatter";
 import { EventDetailsResponse, TicketsDTO } from "@services/mock/DTO";
 import { Box, Button, Divider, Flex, Text } from "@stagepass/osiris-ui";
-import { DateFormatter } from "@util/DateFormatter";
 
 type Props = {
   data: EventDetailsResponse["eventTicketsList"];
@@ -16,6 +16,7 @@ export function EventSearchList({ data }: Props) {
       bgColor="os-secondary.100"
       rounded="2xl"
       p="2rem"
+      pb="1rem"
     >
       <Flex
         flexDirection="row"
@@ -27,20 +28,25 @@ export function EventSearchList({ data }: Props) {
       </Flex>
 
       {data.map((ticketInfo: TicketsDTO) => (
-        <div key={ticketInfo.id}>
-          <Flex mt="2rem" alignItems="center" justifyContent="space-between">
+        <Flex key={ticketInfo.id} flexDir="column">
+          <Flex
+            mt="2rem"
+            alignItems="center"
+            justifyContent="space-between"
+            gap="5"
+          >
             <Text
               text={`${ticketInfo.location} - ${ticketInfo.city}, ${ticketInfo.country}`}
               color="gray.100"
               fontSize="1rem"
-              maxWidth="180px"
+              maxWidth="8rem"
               fontWeight="bold"
             />
             <Flex flexDirection="column">
               <Text
                 text={DateFormatter(ticketInfo.date, "en-us", {
                   year: "numeric",
-                  month: "long",
+                  month: "numeric",
                   day: "numeric",
                 })}
                 color="os-primary.300"
@@ -49,23 +55,24 @@ export function EventSearchList({ data }: Props) {
 
               <Text
                 text={`${ticketInfo.day} - ${ticketInfo.time}`}
+                fontSize="sm"
                 color="os-primary.300"
               />
             </Flex>
           </Flex>
           <Button
             mt="2rem"
-            bgColor="os-ternary.300"
             px="10rem"
             py="2rem"
             color="gray.100"
             rounded="2xl"
             fontSize="1rem"
+            bgColor="os-ternary.300"
             textTransform="uppercase"
             maxWidth="100%"
             _hover={{ opacity: 0.8 }}
           >
-            SEE TICKETS FOR THIS CONCERT
+            See Tickets for this {ticketInfo.kind}
           </Button>
 
           {ticketInfo.id !== data[data.length - 1].id && (
@@ -73,7 +80,7 @@ export function EventSearchList({ data }: Props) {
               <Divider borderColor="os-primary.100" />
             </Box>
           )}
-        </div>
+        </Flex>
       ))}
     </Flex>
   );

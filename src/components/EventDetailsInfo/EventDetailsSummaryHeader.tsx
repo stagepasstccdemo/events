@@ -1,6 +1,6 @@
+import { Box, Divider, Flex, Image, Text, Button } from "@stagepass/osiris-ui";
 import { FiPlayCircle } from "@assets/icons";
 import { EventDetailsResponse } from "@services/mock/DTO";
-import { Box, Divider, Flex, Image, Text, Button } from "@stagepass/osiris-ui";
 
 type Props = {
   data: EventDetailsResponse["summaryHeader"];
@@ -40,10 +40,15 @@ export function EventDetailsSummaryHeader({ data }: Props) {
             <Text
               text={data.eventMainTitle}
               color="os-primary.100"
-              fontSize="1.5rem"
+              fontSize="2xl"
               fontWeight="bold"
             />
-            <Divider rounded="full" width="100%" borderColor="os-ternary.300" />
+            <Divider
+              rounded="full"
+              width="100%"
+              borderColor="os-ternary.300"
+              mb="2"
+            />
           </Box>
           <Text
             text={data.eventSubTitle}
@@ -86,10 +91,11 @@ export function EventDetailsSummaryHeader({ data }: Props) {
 
         <Button
           mt="2rem"
-          bgColor="os-ternary.300"
           px="4rem"
           py="2rem"
-          color="gray.100"
+          border="1px solid"
+          borderColor="os-ternary.300"
+          color="os-ternary.300"
           rounded="2xl"
           fontSize="1.5rem"
           fontWeight="bold"

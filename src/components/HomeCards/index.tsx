@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {
   Box,
   Filter,
@@ -6,10 +5,10 @@ import {
   FilteredCards,
   Skeleton,
   Flex,
+  Heading,
 } from "@stagepass/osiris-ui";
 
 import { FiFilter, MdFilterList } from "@assets/icons";
-
 import { useQuery } from "react-query";
 import { useEventsService } from "@hooks/useAPI";
 import { useNavigate } from "react-router-dom";
@@ -71,7 +70,7 @@ export function HomeCards() {
   if (eventsSummaryError || eventsTrendingError || filterOptionsError) {
     return (
       <Box>
-        <h1>Something went wrong.</h1>
+        <Heading text="Something went wrong" />
       </Box>
     );
   }
@@ -106,6 +105,9 @@ export function HomeCards() {
             textLabel="Trending Events"
             cardType="numbered"
             renderList={eventsTrending || []}
+            onSeeMoreClick={(cardItem: number) => {
+              navigate(`/event?eventId=${cardItem}`, { replace: true });
+            }}
           />
         </Box>
       </Box>
