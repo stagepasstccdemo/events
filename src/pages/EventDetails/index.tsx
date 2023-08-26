@@ -1,13 +1,5 @@
-import {
-  BaseContainer,
-  Box,
-  Heading,
-  Loading,
-  SearchInput,
-} from "@stagepass/osiris-ui";
+import { Box, Heading, Loading } from "@stagepass/osiris-ui";
 
-import { DefaultFooter } from "@components/Footer";
-import { DefaultHeader } from "@components/Header";
 import { EventDetailsSummaryHeader } from "@components/EventDetailsInfo";
 import { EventSearchList } from "@components/EventDetailsInfo/EventSearchList";
 import { EventExtraContent } from "@components/EventDetailsInfo/EventExtraContent";
@@ -15,6 +7,7 @@ import { EventExtraContent } from "@components/EventDetailsInfo/EventExtraConten
 import { useQuery } from "react-query";
 import { useEventsService } from "@hooks/useAPI";
 import { useSearchParams } from "@hooks/useSearchParams";
+import { PageWrapper } from "@components/PageWrapper";
 
 export function EventDetails() {
   const eventId = useSearchParams("eventId");
@@ -33,11 +26,7 @@ export function EventDetails() {
   }
 
   return (
-    <BaseContainer>
-      <DefaultHeader />
-      <Box mt="2rem" mb="2rem">
-        <SearchInput />
-      </Box>
+    <PageWrapper>
       {error ? (
         <Heading text="Something went wrong" />
       ) : (
@@ -47,7 +36,6 @@ export function EventDetails() {
           <EventExtraContent data={data.eventExtraContent} />
         </Box>
       )}
-      <DefaultFooter />
-    </BaseContainer>
+    </PageWrapper>
   );
 }

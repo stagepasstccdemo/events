@@ -26,6 +26,7 @@ export function HomeCards() {
     isFetching: eventsSummaryIsFetching,
     error: eventsSummaryError,
   } = useQuery("@stagepass:events_summary", getEventsSummary, {
+    refetchOnWindowFocus: false,
     staleTime: 1000 * 60 * 30, // 30 minutes
   });
 
@@ -35,6 +36,7 @@ export function HomeCards() {
     isFetching: eventsTrendingIsFetching,
     error: eventsTrendingError,
   } = useQuery("@stagepass:events_trending", getEventsTrending, {
+    refetchOnWindowFocus: false,
     staleTime: 1000 * 60 * 30, // 30 minutes
   });
 
@@ -44,6 +46,7 @@ export function HomeCards() {
     isFetching: filterOptionsIsFetching,
     error: filterOptionsError,
   } = useQuery("@stagepass:events_filter_options", getQuickFilterOptions, {
+    refetchOnWindowFocus: false,
     staleTime: 1000 * 60 * 30, // 30 minutes
   });
 
