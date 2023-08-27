@@ -87,8 +87,8 @@ export function EventExtraContent({ data }: Props) {
               overflow="hidden"
             >
               <Image
-                maxWidth="150px"
-                maxHeight="160px"
+                width="150px"
+                height="160px"
                 roundedLeft="8px"
                 roundedRight="20px"
                 objectFit="cover"

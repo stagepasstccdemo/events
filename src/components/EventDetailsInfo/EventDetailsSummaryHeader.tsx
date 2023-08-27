@@ -27,10 +27,11 @@ export function EventDetailsSummaryHeader({ data }: Props) {
           <Image
             position="absolute"
             bottom="0"
-            left="5"
+            left="8"
             rounded="full"
-            maxWidth="150px"
-            maxHeight="150px"
+            width="140px"
+            height="140px"
+            objectFit="cover"
             src={data.eventImageURL}
           />
         </Box>
