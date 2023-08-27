@@ -59,16 +59,9 @@ export const EventDetailsFixtures: EventDetailsDTO[] = [
       {
         id: 1,
         eventImageURL:
-          "https://www.udiscovermusic.com/wp-content/uploads/2019/08/Taylor-Swift-Lover-album-cover-820.jpg",
-        eventMainTitle: "Taylor Swift",
-        eventSubTitle: "The Eras Tour",
-      },
-      {
-        id: 2,
-        eventImageURL:
-          "https://lmcexperience.com/wp-content/uploads/2023/04/NFHope.jpg",
-        eventMainTitle: "NF",
-        eventSubTitle: "The Search",
+          "https://musicmayhemmagazine.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-04-at-10.11.52-PM.png",
+        eventMainTitle: "Justin Bieber",
+        eventSubTitle: "#PeachesTour",
       },
     ],
     tickets: [
@@ -284,13 +277,6 @@ export const EventDetailsFixtures: EventDetailsDTO[] = [
         eventMainTitle: "Justin Bieber",
         eventSubTitle: "#PeachesTour",
       },
-      {
-        id: 2,
-        eventImageURL:
-          "https://www.udiscovermusic.com/wp-content/uploads/2019/08/Taylor-Swift-Lover-album-cover-820.jpg",
-        eventMainTitle: "Taylor Swift",
-        eventSubTitle: "The Eras Tour",
-      },
     ],
     tickets: [
       {
@@ -413,13 +399,6 @@ export const EventDetailsFixtures: EventDetailsDTO[] = [
           "https://musicmayhemmagazine.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-04-at-10.11.52-PM.png",
         eventMainTitle: "Justin Bieber",
         eventSubTitle: "#PeachesTour",
-      },
-      {
-        id: 2,
-        eventImageURL:
-          "https://www.udiscovermusic.com/wp-content/uploads/2019/08/Taylor-Swift-Lover-album-cover-820.jpg",
-        eventMainTitle: "Taylor Swift",
-        eventSubTitle: "The Eras Tour",
       },
     ],
     tickets: [
@@ -549,13 +528,6 @@ export const EventDetailsFixtures: EventDetailsDTO[] = [
           "https://musicmayhemmagazine.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-04-at-10.11.52-PM.png",
         eventMainTitle: "Justin Bieber",
         eventSubTitle: "#PeachesTour",
-      },
-      {
-        id: 2,
-        eventImageURL:
-          "https://www.udiscovermusic.com/wp-content/uploads/2019/08/Taylor-Swift-Lover-album-cover-820.jpg",
-        eventMainTitle: "Taylor Swift",
-        eventSubTitle: "The Eras Tour",
       },
     ],
     tickets: [
@@ -692,13 +664,6 @@ export const EventDetailsFixtures: EventDetailsDTO[] = [
         eventMainTitle: "Justin Bieber",
         eventSubTitle: "#PeachesTour",
       },
-      {
-        id: 2,
-        eventImageURL:
-          "https://www.udiscovermusic.com/wp-content/uploads/2019/08/Taylor-Swift-Lover-album-cover-820.jpg",
-        eventMainTitle: "Taylor Swift",
-        eventSubTitle: "The Eras Tour",
-      },
     ],
     tickets: [
       {
@@ -833,13 +798,6 @@ export const EventDetailsFixtures: EventDetailsDTO[] = [
           "https://musicmayhemmagazine.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-04-at-10.11.52-PM.png",
         eventMainTitle: "Justin Bieber",
         eventSubTitle: "#PeachesTour",
-      },
-      {
-        id: 2,
-        eventImageURL:
-          "https://www.udiscovermusic.com/wp-content/uploads/2019/08/Taylor-Swift-Lover-album-cover-820.jpg",
-        eventMainTitle: "Taylor Swift",
-        eventSubTitle: "The Eras Tour",
       },
     ],
     tickets: [
