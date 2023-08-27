@@ -1,11 +1,19 @@
 import { Box, Button, Flex, Image, Text } from "@stagepass/osiris-ui";
 import { EventDetailsResponse } from "@services/mock/DTO";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   data: EventDetailsResponse["eventExtraContent"];
 };
 
 export function EventExtraContent({ data }: Props) {
+  const navigate = useNavigate();
+
+  const handleRecommendedEventClick = (eventId: number) => {
+    navigate(`/event?eventId=${eventId}`, { replace: true });
+    location.reload();
+  };
+
   return (
     <Flex flexDirection="column">
       <Box>
@@ -115,6 +123,7 @@ export function EventExtraContent({ data }: Props) {
                   maxWidth="100%"
                   textTransform="uppercase"
                   _hover={{ opacity: 0.8 }}
+                  onClick={() => handleRecommendedEventClick(event.id)}
                 >
                   see more
                 </Button>
