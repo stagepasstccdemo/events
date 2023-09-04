@@ -15,9 +15,14 @@ export const useStore = () => {
     store.setTicketInfo(payload);
   };
 
+  const setRedirectUrl = (payload: string) => {
+    store.setRedirectUrl(payload);
+  };
+
   return {
     store,
     setUserInfo,
     setTicketInfo,
+    setRedirectUrl,
   };
 };
