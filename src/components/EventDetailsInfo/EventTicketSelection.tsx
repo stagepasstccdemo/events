@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Box,
   Button,
@@ -49,6 +48,23 @@ export function EventTicketSelection({
   onClose,
   data,
 }: EventTicketSelectionProps) {
+  const handleProceedToCheckout = (ticketId: string) => {
+    const ticketInfo = data.ticketOptions.find(
+      (ticketOption) => ticketOption.id === ticketId
+    );
+
+    const formattedData = {
+      ...data,
+      ticketOptions: [ticketInfo],
+    };
+
+    const payload = {
+      data: formattedData,
+    };
+
+    return payload;
+  };
+
   return (
     <Modal
       {...{ isOpen, onClose }}
@@ -118,6 +134,7 @@ export function EventTicketSelection({
               borderRadius="20px"
               color="white"
               flex={1}
+              onClick={() => handleProceedToCheckout(ticketOption.id)}
             >
               proceed to checkout
             </Button>
