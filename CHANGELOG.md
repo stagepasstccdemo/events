@@ -1,3 +1,36 @@
+# [1.10.0](https://github.com/stagePass/events/compare/v1.9.0...v1.10.0) (2023-09-04)
+
+
+### Bug Fixes
+
+* new data mapping for event details ([8dd095c](https://github.com/stagePass/events/commit/8dd095cfe906f2da940b163c779dad31ff8586fd))
+* objects without property or with any definition ([34ba149](https://github.com/stagePass/events/commit/34ba1491a4697d03474d262b6a3e27edeaffb508))
+* workaround in order to fix bug in miragejs that doesnt support subrouting from react-router-dom ([9826ea2](https://github.com/stagePass/events/commit/9826ea2d98432a4d61b4cf896f806fbdc3dc6504))
+
+
+### Features
+
+* add mock for other events ([921de37](https://github.com/stagePass/events/commit/921de3783b34e524ea35f7b70da77d1822c85e56))
+* add new event details fixtures ([1fe4dde](https://github.com/stagePass/events/commit/1fe4dde5c04940f234890ec9aa099b6ea02742fe))
+* create a pageWrapper in common with all pages ([3a5728e](https://github.com/stagePass/events/commit/3a5728e190a353ffacb6b948f7d7f38b4eb2475e))
+* create event ticket selection modal ([c874934](https://github.com/stagePass/events/commit/c874934c9bc6dcb45668b365f5b48e02b228302a))
+* create functio to send payload to util-state app ([78261f8](https://github.com/stagePass/events/commit/78261f808804f36d5b31982587a40bb00862886e))
+* create method to handle proceed checkout payload data ([783890e](https://github.com/stagePass/events/commit/783890ea46fa007478caad8788a9f86df39c4dbd))
+* create new resource endpoint for getting event details by id ([d7f4a53](https://github.com/stagePass/events/commit/d7f4a536579bf70974c5897e45fac390935aa50d))
+* finish refactoring mock api and create new endpoint for listEventDetails ([3b37084](https://github.com/stagePass/events/commit/3b3708438aaca050a0863f2a0cd4356bb475fa7f))
+* general refactoring and fixing imports ([4a4d3bb](https://github.com/stagePass/events/commit/4a4d3bb7c9d17c7595dbff73822d9e08b4bf695f))
+* getting event details from api and render in screen ([a13535d](https://github.com/stagePass/events/commit/a13535d3fa042fe1b7a2838277654ed2a58461dc))
+* make label better for filtered events summary ([7244fdb](https://github.com/stagePass/events/commit/7244fdb38f0f348bd1cc5521a968c005f135fabc))
+* navigate to checkout page on ticket selection ([0ad7923](https://github.com/stagePass/events/commit/0ad7923952560f865264349740122382324714d9))
+* redirect to recommended event click ([2a62bcb](https://github.com/stagePass/events/commit/2a62bcbf4cc87fc53590ebd64193686ba78f5ffb))
+* refactoring fixtures data ([a06b786](https://github.com/stagePass/events/commit/a06b786ebd46cbac578e4b3d13b86da08d643797))
+* refactoring service mock dtos ([30917a0](https://github.com/stagePass/events/commit/30917a0ec7a1c7a9bb0900bdf4a85028a5adb537))
+* refactoring service mock dtos - p2 ([40af5b4](https://github.com/stagePass/events/commit/40af5b4e2eaf7917266d45544f9188505e3d53ec))
+* refactoring service mock dtos - p3 ([1ca545e](https://github.com/stagePass/events/commit/1ca545e1685c5880d0cf50091462304338b2eb76))
+* restructure how tickets are shown ([b763ade](https://github.com/stagePass/events/commit/b763ade60ce3fac385157a5cff2cfe0620c1d4e8))
+* restructure how tickets are shown ([db5072f](https://github.com/stagePass/events/commit/db5072f67cff3f57cabbf40c35d6aae4a180d13b))
+* set ticket info data to util state store ([1bbfaa7](https://github.com/stagePass/events/commit/1bbfaa7bee4bfa35cb10439c6e9b51a2912e15e4))
+
 # [1.9.0](https://github.com/stagePass/events/compare/v1.8.0...v1.9.0) (2023-07-29)
 
 
