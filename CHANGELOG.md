@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/stagePass/events/compare/v1.10.0...v1.10.1) (2023-09-04)
+
+
+### Bug Fixes
+
+* urlPrefix on miragejs startup settings ([b3698a1](https://github.com/stagePass/events/commit/b3698a16c1f16eecacb8ec636b0bc2929b7702a3))
+
 # [1.10.0](https://github.com/stagePass/events/compare/v1.9.0...v1.10.0) (2023-09-04)
 
 
