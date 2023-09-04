@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/stagePass/events/compare/v1.10.1...v1.11.0) (2023-09-04)
+
+
+### Features
+
+* create redirect to sigin or checkout based on user auth ([ed6859c](https://github.com/stagePass/events/commit/ed6859c322d0260f7b43445ac3a8ec8ae8636cdb))
+
 ## [1.10.1](https://github.com/stagePass/events/compare/v1.10.0...v1.10.1) (2023-09-04)
 
 
