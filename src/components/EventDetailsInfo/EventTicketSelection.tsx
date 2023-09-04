@@ -11,6 +11,10 @@ import { IoTicketSharp } from "@assets/icons";
 import { TicketOptions, TicketsDTO } from "@services/mock/DTO";
 import { DateFormatter } from "@util/DateFormatter";
 
+// @ts-ignore
+import { useStore } from "@stagepass/util-state";
+import { useUser } from "@hooks/useUser";
+
 function HeaderModal() {
   return (
     <Text
@@ -48,21 +52,19 @@ export function EventTicketSelection({
   onClose,
   data,
 }: EventTicketSelectionProps) {
+  const store = useStore();
+  const { userData } = useUser();
+
   const handleProceedToCheckout = (ticketId: string) => {
     const ticketInfo = data.ticketOptions.find(
       (ticketOption) => ticketOption.id === ticketId
     );
 
-    const formattedData = {
+    store.setTicketInfo({
       ...data,
       ticketOptions: [ticketInfo],
-    };
-
-    const payload = {
-      data: formattedData,
-    };
-
-    return payload;
+    });
+    store.setUserInfo({ userData });
   };
 
   return (
