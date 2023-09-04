@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { Footer } from "@stagepass/osiris-ui";
 import { FiChevronsUp } from "@assets/icons";
 

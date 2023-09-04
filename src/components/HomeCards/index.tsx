@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {
   Box,
   Filter,
@@ -6,10 +5,10 @@ import {
   FilteredCards,
   Skeleton,
   Flex,
+  Heading,
 } from "@stagepass/osiris-ui";
 
 import { FiFilter, MdFilterList } from "@assets/icons";
-
 import { useQuery } from "react-query";
 import { useEventsService } from "@hooks/useAPI";
 import { useNavigate } from "react-router-dom";
@@ -26,6 +25,7 @@ export function HomeCards() {
     isFetching: eventsSummaryIsFetching,
     error: eventsSummaryError,
   } = useQuery("@stagepass:events_summary", getEventsSummary, {
+    refetchOnWindowFocus: false,
     staleTime: 1000 * 60 * 30, // 30 minutes
   });
 
@@ -35,6 +35,7 @@ export function HomeCards() {
     isFetching: eventsTrendingIsFetching,
     error: eventsTrendingError,
   } = useQuery("@stagepass:events_trending", getEventsTrending, {
+    refetchOnWindowFocus: false,
     staleTime: 1000 * 60 * 30, // 30 minutes
   });
 
@@ -43,7 +44,10 @@ export function HomeCards() {
     isLoading: filterOptionsIsLoading,
     isFetching: filterOptionsIsFetching,
     error: filterOptionsError,
-  } = useQuery("@stagepass:events_filter_options", getQuickFilterOptions);
+  } = useQuery("@stagepass:events_filter_options", getQuickFilterOptions, {
+    refetchOnWindowFocus: false,
+    staleTime: 1000 * 60 * 30, // 30 minutes
+  });
 
   if (
     eventsSummaryIsLoading ||
@@ -66,7 +70,7 @@ export function HomeCards() {
   if (eventsSummaryError || eventsTrendingError || filterOptionsError) {
     return (
       <Box>
-        <h1>Something went wrong.</h1>
+        <Heading text="Something went wrong" />
       </Box>
     );
   }
@@ -87,7 +91,7 @@ export function HomeCards() {
             renderList={eventsSummary || []}
             hasSeeMoreOption
             onSeeMoreClick={(cardItem: number) => {
-              navigate(`/events/${cardItem}`);
+              navigate(`/event?eventId=${cardItem}`, { replace: true });
             }}
           />
         </Filter>
@@ -101,6 +105,9 @@ export function HomeCards() {
             textLabel="Trending Events"
             cardType="numbered"
             renderList={eventsTrending || []}
+            onSeeMoreClick={(cardItem: number) => {
+              navigate(`/event?eventId=${cardItem}`, { replace: true });
+            }}
           />
         </Box>
       </Box>

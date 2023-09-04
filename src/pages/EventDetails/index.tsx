@@ -1,26 +1,42 @@
-// @ts-nocheck
-import { DefaultFooter } from "@components/Footer";
-import { DefaultHeader } from "@components/Header";
-import { BaseContainer, Box, SearchInput } from "@stagepass/osiris-ui";
+import { Box, Heading, Loading } from "@stagepass/osiris-ui";
 
-import { useParams } from "react-router-dom";
-import { EventDetailsSummaryHeader } from "@components/EventDetailsInfo";
-import { EventSearchList } from "@components/EventDetailsInfo/EventSearchList";
-import { EventExtraContent } from "@components/EventDetailsInfo/EventExtraContent";
+import { useQuery } from "react-query";
+import { useEventsService } from "@hooks/useAPI";
+import { PageWrapper } from "@components/PageWrapper";
+import { useSearchParams } from "@hooks/useSearchParams";
+import {
+  EventDetailsSummaryHeader,
+  EventExtraContent,
+  EventSearchList,
+} from "@components/EventDetailsInfo";
 
 export function EventDetails() {
-  const { eventId } = useParams();
+  const eventId = useSearchParams("eventId");
+  const { getEventDetails } = useEventsService();
+
+  const { data, isLoading, isFetching, error } = useQuery(
+    "@stagepass:event_info_details",
+    () => getEventDetails(eventId),
+    {
+      staleTime: 1000 * 60 * 1, // 1 minute
+    }
+  );
+
+  if (isLoading || isFetching) {
+    return <Loading />;
+  }
 
   return (
-    <BaseContainer>
-      <DefaultHeader />
-      <Box mt="2rem" mb="2rem">
-        <SearchInput />
-      </Box>
-      <EventDetailsSummaryHeader />
-      <EventSearchList />
-      <EventExtraContent />
-      <DefaultFooter />
-    </BaseContainer>
+    <PageWrapper>
+      {error ? (
+        <Heading text="Something went wrong" />
+      ) : (
+        <Box mt="5">
+          <EventDetailsSummaryHeader data={data.summaryHeader} />
+          <EventSearchList data={data.eventTicketsList} />
+          <EventExtraContent data={data.eventExtraContent} />
+        </Box>
+      )}
+    </PageWrapper>
   );
 }

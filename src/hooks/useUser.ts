@@ -1,4 +1,4 @@
-// @ts-nocheck
+// @ts-ignore
 import { useAuth } from "@stagepass/app-auth";
 
 export const useUser = () => {

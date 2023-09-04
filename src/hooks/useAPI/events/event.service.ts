@@ -1,6 +1,11 @@
-import { ENDPOINTS } from "@constants/endpoints";
+import {
+  EventDetailsResponse,
+  EventSummaryDTO,
+  EventTrendingDTO,
+} from "@services/mock/DTO";
+
 import { api } from "@services/api";
-import { EventSummaryDTO, EventTrendingDTO } from "@services/mock/DTO";
+import { ENDPOINTS } from "@constants/endpoints";
 
 export const useEventsService = () => {
   const getEventsSummary = async () => {
@@ -68,11 +73,62 @@ export const useEventsService = () => {
     return data;
   };
 
+  const getEventDetails = async (eventId: string) => {
+    try {
+      const { data } = await api.get(
+        ENDPOINTS.LIST_EVENT_DETAILS_BY_ID(eventId)
+      );
+
+      if (!data) {
+        return null;
+      }
+
+      const {
+        eventImageURL,
+        eventMainTitle,
+        eventSubTitle,
+        parentalRating,
+        locationsAmount,
+        peopleInterestedAtThisEvent,
+        aboutEvent,
+        tickets,
+        tourSetlist,
+        eventVideoURL,
+        recommendedEvents,
+      } = data.listEventDetails;
+
+      const summaryHeader: EventDetailsResponse["summaryHeader"] = {
+        eventImageURL,
+        eventMainTitle,
+        eventSubTitle,
+        parentalRating,
+        locationsAmount,
+        peopleInterestedAtThisEvent,
+        aboutEvent,
+      };
+
+      const eventExtraContent: EventDetailsResponse["eventExtraContent"] = {
+        tourSetlist,
+        eventVideoURL,
+        recommendedEvents,
+      };
+
+      return {
+        summaryHeader,
+        eventTicketsList: <EventDetailsResponse["eventTicketsList"]>tickets,
+        eventExtraContent,
+      };
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
+
   const services = {
     getEventsSummary,
     getEventsTrending,
     getQuickFilterOptions,
     getEventKindCategories,
+    getEventDetails,
   };
 
   return services;

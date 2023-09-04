@@ -1,6 +1,6 @@
-import event from "./event";
+import eventFactories from "./events";
 
 export default {
-  ...event,
+  ...eventFactories,
   // other modules go here
 };

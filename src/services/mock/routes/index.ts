@@ -1,52 +1,26 @@
 import { ENDPOINTS } from "@constants/endpoints";
+import { Response } from "miragejs";
+import { EventDetailsFixtures } from "../fixtures/events";
+
 import {
-  EventKindCategoriesFixtures,
-  EventSummaryFixtures,
-  EventTrendingFixtures,
-  QuickEventFilterFixtures,
-} from "../fixtures/events";
+  eventRoutes,
+  listEventDetails,
+  listEventKindCategories,
+  listEventsQuickFilterOptions,
+  listEventsSummary,
+  listEventsTrending,
+} from "./events";
 
 export default function routes() {
+  this.urlPrefix = "http://localhost:9000";
   this.namespace = ENDPOINTS.baseURL;
+  this.timing = 0;
 
-  this.get("/event", (schema: any) => {
-    const events = schema.events.all();
-    return events;
-  });
-
-  this.get("/listEventsSummary", (schema: any) => {
-    const positions = EventSummaryFixtures;
-    const listEventsSummary = positions.map((pos: any) => {
-      return schema.listEventsSummaries.create(pos);
-    });
-
-    return listEventsSummary;
-  });
-
-  this.get("/listEventsTrending", (schema: any) => {
-    const positions = EventTrendingFixtures;
-    const listEventsTrending = positions.map((pos: any) => {
-      return schema.listEventsTrendings.create(pos);
-    });
-    return listEventsTrending;
-  });
-
-  this.get("/eventsQuickFilterOptions", (schema: any) => {
-    const filters = QuickEventFilterFixtures;
-    const listQuickEventFilters = filters.map((filter: any) => {
-      return schema.eventsQuickFilterOptions.create(filter);
-    });
-
-    return listQuickEventFilters;
-  });
-
-  this.get("/listEventKindCategories", (schema: any) => {
-    const categories = EventKindCategoriesFixtures;
-
-    const listEventKindCategories = categories.map((category: any) => {
-      return schema.listEventKindCategories.create(category);
-    });
-
-    return listEventKindCategories;
-  });
+  // Events
+  eventRoutes(this);
+  listEventsTrending(this);
+  listEventsSummary(this);
+  listEventsQuickFilterOptions(this);
+  listEventKindCategories(this);
+  listEventDetails(this);
 }
