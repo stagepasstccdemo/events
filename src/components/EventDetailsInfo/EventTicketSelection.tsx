@@ -15,6 +15,7 @@ import { DateFormatter } from "@util/DateFormatter";
 import { useStore } from "@hooks/useStore";
 import { useUser } from "@hooks/useUser";
 import { navigateToUrl } from "single-spa";
+import { useEffect, useState } from "react";
 
 function HeaderModal() {
   return (
@@ -54,26 +55,18 @@ export function EventTicketSelection({
   data,
 }: EventTicketSelectionProps) {
   const { setTicketInfo, setUserInfo, setRedirectUrl } = useStore();
-  const toast = useToast();
-
   const { userSession } = useUser();
+  const isUserAuthenticated = !!userSession?.access_token;
+  const [toggleLoginRequirement, setToggleLoginRequirement] = useState(false);
+
+  const redirectToSignIn = () => {
+    setRedirectUrl(`/event?eventId=${data.id}`);
+    navigateToUrl(`/SignIn`);
+  };
 
   const handleProceedToCheckout = (ticketId: string) => {
-    const isAuthenticated = !!userSession?.access_token;
-
-    if (!isAuthenticated) {
-      toast(
-        `You need to login in order to purchase tickets, redirecting in 5 seconds...`,
-        {
-          position: "top-center",
-          duration: 5000,
-        }
-      );
-
-      setTimeout(() => {
-        setRedirectUrl(`/event?eventId=${data.id}`);
-        navigateToUrl(`/SignIn`);
-      }, 5000);
+    if (!isUserAuthenticated) {
+      setToggleLoginRequirement(true);
     } else {
       const ticketInfo = data.ticketOptions.find(
         (ticketOption) => ticketOption.id === ticketId
@@ -171,7 +164,57 @@ export function EventTicketSelection({
           )}
         </Box>
       ))}
-      <Toaster />
+      {toggleLoginRequirement && (
+        <Modal
+          isOpen={toggleLoginRequirement}
+          onClose={() => setToggleLoginRequirement(false)}
+          size="full"
+          headerModal={
+            <Text
+              mt="2.5rem"
+              textAlign="center"
+              text="Login Required"
+              fontSize="3xl"
+              color="os-primary.100"
+              fontWeight="normal"
+              alignSelf="center"
+            />
+          }
+          footerModal={
+            <Button
+              color="os-ternary.300"
+              flex={1}
+              fontWeight="normal"
+              onClick={() => setToggleLoginRequirement(false)}
+            >
+              cancel
+            </Button>
+          }
+        >
+          <Flex flexDirection="column">
+            <Text>
+              You need to be logged in to proceed to checkout. You will be
+              redirected to the login page in 5 seconds.
+            </Text>
+            <Button
+              alignSelf="center"
+              mt="2rem"
+              bgColor="os-primary.100"
+              py="1rem"
+              px="3rem"
+              maxW="40rem"
+              width="100%"
+              fontWeight="semibold"
+              borderRadius="20px"
+              color="white"
+              flex={1}
+              onClick={redirectToSignIn}
+            >
+              Go to Login Page
+            </Button>
+          </Flex>
+        </Modal>
+      )}
     </Modal>
   );
 }
