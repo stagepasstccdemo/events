@@ -72,11 +72,11 @@ export function EventSearchList({ data }: Props) {
           </Flex>
           <Button
             mt="2rem"
-            px="10rem"
+            px="8rem"
             py="2rem"
             color="gray.100"
             rounded="2xl"
-            fontSize="1rem"
+            fontSize="0.8rem"
             bgColor="os-ternary.300"
             textTransform="uppercase"
             maxWidth="100%"
