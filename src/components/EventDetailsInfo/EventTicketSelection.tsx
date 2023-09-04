@@ -6,11 +6,14 @@ import {
   Modal,
   Text,
   TextBadge,
+  Toaster,
+  useToast,
 } from "@stagepass/osiris-ui";
 import { IoTicketSharp } from "@assets/icons";
 import { TicketOptions, TicketsDTO } from "@services/mock/DTO";
 import { DateFormatter } from "@util/DateFormatter";
 import { useStore } from "@hooks/useStore";
+import { useUser } from "@hooks/useUser";
 import { navigateToUrl } from "single-spa";
 
 function HeaderModal() {
@@ -50,16 +53,36 @@ export function EventTicketSelection({
   onClose,
   data,
 }: EventTicketSelectionProps) {
-  const { setTicketInfo, setUserInfo } = useStore();
+  const { setTicketInfo, setUserInfo, setRedirectUrl } = useStore();
+  const toast = useToast();
+
+  const { userSession } = useUser();
 
   const handleProceedToCheckout = (ticketId: string) => {
-    const ticketInfo = data.ticketOptions.find(
-      (ticketOption) => ticketOption.id === ticketId
-    );
+    const isAuthenticated = !!userSession?.access_token;
 
-    setTicketInfo({ ...data, ticketOptions: [ticketInfo] });
-    setUserInfo();
-    navigateToUrl(`/checkout`);
+    if (!isAuthenticated) {
+      toast(
+        `You need to login in order to purchase tickets, redirecting in 5 seconds...`,
+        {
+          position: "top-center",
+          duration: 5000,
+        }
+      );
+
+      setTimeout(() => {
+        setRedirectUrl(`/event?eventId=${data.id}`);
+        navigateToUrl(`/SignIn`);
+      }, 5000);
+    } else {
+      const ticketInfo = data.ticketOptions.find(
+        (ticketOption) => ticketOption.id === ticketId
+      );
+
+      setTicketInfo({ ...data, ticketOptions: [ticketInfo] });
+      setUserInfo();
+      navigateToUrl(`/checkout`);
+    }
   };
 
   return (
@@ -145,6 +168,7 @@ export function EventTicketSelection({
           )}
         </Box>
       ))}
+      <Toaster />
     </Modal>
   );
 }
