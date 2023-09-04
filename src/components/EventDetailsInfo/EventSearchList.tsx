@@ -1,13 +1,23 @@
+import { useState } from "react";
 import { IoTicketOutline } from "@assets/icons";
 import { DateFormatter } from "@util/DateFormatter";
 import { EventDetailsResponse, TicketsDTO } from "@services/mock/DTO";
+
 import { Box, Button, Divider, Flex, Text } from "@stagepass/osiris-ui";
+import { EventTicketSelection } from "./EventTicketSelection";
 
 type Props = {
   data: EventDetailsResponse["eventTicketsList"];
 };
 
 export function EventSearchList({ data }: Props) {
+  const [ticketSelectionModal, setTicketSelectionModal] = useState(false);
+  const [concertTicketId, setConcertTicketId] = useState("");
+  const toggleTicketSelectionModal = (id: string) => {
+    setTicketSelectionModal((prevState) => !prevState);
+    setConcertTicketId(id);
+  };
+
   return (
     <Flex
       flexDirection="column"
@@ -70,6 +80,7 @@ export function EventSearchList({ data }: Props) {
             bgColor="os-ternary.300"
             textTransform="uppercase"
             maxWidth="100%"
+            onClick={() => toggleTicketSelectionModal(ticketInfo.id)}
             _hover={{ opacity: 0.8 }}
           >
             See Tickets for this {ticketInfo.kind}
@@ -82,6 +93,13 @@ export function EventSearchList({ data }: Props) {
           )}
         </Flex>
       ))}
+      {ticketSelectionModal && (
+        <EventTicketSelection
+          isOpen={ticketSelectionModal}
+          onClose={toggleTicketSelectionModal}
+          data={data.find((ticket) => ticket.id === concertTicketId)}
+        />
+      )}
     </Flex>
   );
 }

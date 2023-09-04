@@ -1,6 +1,6 @@
 import { EventKindDTO } from "./EventKindDTO";
 
-type TicketOptions = {
+export type TicketOptions = {
   id: string;
   type: "VIP" | "Standard" | "Student";
   price: number;
