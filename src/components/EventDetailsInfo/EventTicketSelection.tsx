@@ -11,6 +11,7 @@ import { IoTicketSharp } from "@assets/icons";
 import { TicketOptions, TicketsDTO } from "@services/mock/DTO";
 import { DateFormatter } from "@util/DateFormatter";
 import { useStore } from "@hooks/useStore";
+import { navigateToUrl } from "single-spa";
 
 function HeaderModal() {
   return (
@@ -58,6 +59,7 @@ export function EventTicketSelection({
 
     setTicketInfo({ ...data, ticketOptions: [ticketInfo] });
     setUserInfo();
+    navigateToUrl(`/checkout`);
   };
 
   return (
