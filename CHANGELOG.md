@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/stagePass/events/compare/v1.11.0...v1.12.0) (2023-09-04)
+
+
+### Features
+
+* create paywall screen to ensure user is signed in before going to checkout ([f896cf4](https://github.com/stagePass/events/commit/f896cf4f8d6886dc34bf1043e98b3924516508e9))
+
 # [1.11.0](https://github.com/stagePass/events/compare/v1.10.1...v1.11.0) (2023-09-04)
 
 
