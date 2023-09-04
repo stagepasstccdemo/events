@@ -12,7 +12,6 @@ import {
 } from "./events";
 
 export default function routes() {
-  this.urlPrefix = "http://localhost:9000";
   this.namespace = ENDPOINTS.baseURL;
   this.timing = 0;
 
