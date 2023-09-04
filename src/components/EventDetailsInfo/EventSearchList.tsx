@@ -74,6 +74,9 @@ export function EventSearchList({ data }: Props) {
             mt="2rem"
             px="8rem"
             py="2rem"
+            width="100%"
+            alignSelf="center"
+            maxW={["100%", "100%", "100%", "100%", "100%", "100%", "100%"]}
             color="gray.100"
             rounded="2xl"
             fontSize="0.8rem"

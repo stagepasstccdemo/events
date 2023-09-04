@@ -144,12 +144,15 @@ export function EventTicketSelection({
               </TextBadge>
             </Flex>
           </Flex>
-          <Flex>
+          <Flex flexDir="column">
             <Button
+              alignSelf="center"
               mt="2rem"
               bgColor="os-primary.100"
               py="1rem"
               px="3rem"
+              maxW="40rem"
+              width="100%"
               fontWeight="semibold"
               borderRadius="20px"
               color="white"
