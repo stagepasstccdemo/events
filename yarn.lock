@@ -3120,10 +3120,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@stagepass/osiris-ui@^1.12.0":
-  version "1.12.0"
-  resolved "https://npm.pkg.github.com/download/@stagepass/osiris-ui/1.12.0/7a4a8f227e6a118db8761a0a902388d50b2fa925#7a4a8f227e6a118db8761a0a902388d50b2fa925"
-  integrity sha512-n17/jfC440D4v+0GDxd50xsL+hItCjMQEXef1o8tE0iLLRX043xb95JFJjwQ+NU6uUE+/ka5e+i6ZbKfOyMRYQ==
+"@stagepass/osiris-ui@^1.13.0":
+  version "1.13.0"
+  resolved "https://npm.pkg.github.com/download/@stagepass/osiris-ui/1.13.0/1530c37aa6c31dd706fd64531ba7c49118b71b9b#1530c37aa6c31dd706fd64531ba7c49118b71b9b"
+  integrity sha512-4xMnDpxTzfq+HhgIpZUa6C3sUMRgFceosLrPAlu2uhkPG70WIEuQ/6/4M76Va4k/g0BmZN5T+CxCRBKy+3DGxg==
   dependencies:
     "@chakra-ui/react" "1.8.8"
     "@emotion/react" "^11"
