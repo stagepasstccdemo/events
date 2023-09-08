@@ -192,10 +192,7 @@ export function EventTicketSelection({
           }
         >
           <Flex flexDirection="column">
-            <Text>
-              You need to be logged in to proceed to checkout. You will be
-              redirected to the login page in 5 seconds.
-            </Text>
+            <Text>You need to be logged in to proceed to checkout.</Text>
             <Button
               alignSelf="center"
               mt="2rem"
