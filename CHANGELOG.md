@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/stagePass/events/compare/v1.12.0...v1.13.0) (2023-09-08)
+
+
+### Features
+
+* update message to redirect when login needed ([8e27e86](https://github.com/stagePass/events/commit/8e27e863438a788b6afb5521c67b73e147fc69d5))
+
 # [1.12.0](https://github.com/stagePass/events/compare/v1.11.0...v1.12.0) (2023-09-04)
 
 
