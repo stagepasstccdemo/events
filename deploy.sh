@@ -17,6 +17,7 @@ NEW_URL=/config/mfe/app-events/$VERSION/stagepass-app-events.js
 test -s ./import-map.json && cat ./import-map.json | ./jq --arg NEW_URL "$NEW_URL" '.imports["@stagepass/app-events"] = $NEW_URL' > new.importmap.json || echo '{"imports": {"@stagepass/app-events": "'"$NEW_URL"'"}}' > new.importmap.json
 
 # Upload the new import-map.json
+# INSERT_CORRECT_DISTRIBUTION_ID 
 aws s3 cp dist s3://mfe-stage-pass/config/mfe/app-events/$VERSION --recursive
 aws s3 cp new.importmap.json s3://mfe-stage-pass/config/import-map.json
-aws cloudfront create-invalidation --distribution-id E3AG25M6KMU46Y --paths '/config/import-map.json'
+aws cloudfront create-invalidation --distribution-id INSERT_CORRECT_DISTRIBUTION_ID --paths '/config/import-map.json'
